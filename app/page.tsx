@@ -44,7 +44,7 @@ export default function Home() {
     <div ref={containerRef} className="bg-black text-white overflow-hidden">
       <ScrollProgress className="" />
 
-      {/* <Hero /> */}
+      <Hero />
       <MarqueeText />
       <PainPoints />
       {/* <Solution /> */}
