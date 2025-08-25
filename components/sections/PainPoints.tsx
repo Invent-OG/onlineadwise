@@ -68,7 +68,7 @@ export default function PainPoints() {
           className="absolute right-0 top-0 w-1/2 h-full bg-cover bg-center shadow-lg"
           style={{
             backgroundImage:
-              "url('https://antdisplay.com/pub/media/magefan_blog/hair_styling_shop_2_.jpg')",
+              "url('https://images.pexels.com/photos/3992879/pexels-photo-3992879.jpeg?_gl=1*k8fb9s*_ga*MTc0MTUyODg5Mi4xNzUyNzM0NTIy*_ga_8JE65Q40S6*czE3NTU5NTE2MDkkbzEzJGcxJHQxNzU1OTUzODQ4JGo2MCRsMCRoMA..')",
           }}
         ></div>
 

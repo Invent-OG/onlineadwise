@@ -2,6 +2,7 @@ import Footer from "@/components/sections/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Jost, Caveat } from "next/font/google";
+import OfferBanner from "@/components/sections/OfferBanner";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -25,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jost.variable} ${caveat.variable} ${jost.className}`}>
+        <OfferBanner />
         {children}
+
         <Footer />
       </body>
     </html>

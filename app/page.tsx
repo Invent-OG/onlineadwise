@@ -19,6 +19,10 @@ import { ScrollProgress } from "@/components/eldoraui/scrollprogress";
 import MarqueeText from "@/components/sections/MarqueeText";
 import Slider from "@/components/sections/Slider";
 import SalonMarketing from "@/components/sections/SalonMarketing";
+import Zooming from "@/components/sections/Zooming";
+import PackagesSection from "@/components/sections/PackagesSection";
+import ImageText from "@/components/sections/ImageText";
+import SpaParallax from "@/components/sections/SpaParallax";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -44,12 +48,17 @@ export default function Home() {
     <div ref={containerRef} className="bg-black text-white overflow-hidden">
       <ScrollProgress className="" />
 
-      <Hero />
+      {/* <Hero /> */}
       <MarqueeText />
       <PainPoints />
       {/* <Solution /> */}
+
       <Slider />
       <SalonMarketing />
+      <PackagesSection />
+      <ImageText />
+      <SpaParallax />
+      <Zooming />
       <Benefits />
       <CaseStudy />
       <Process />
