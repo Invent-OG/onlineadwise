@@ -58,7 +58,7 @@ export default function Home() {
       <PackagesSection />
       <ImageText />
       <SpaParallax />
-      <Zooming />
+      {/* <Zooming /> */}
       <Benefits />
       <CaseStudy />
       <Process />
