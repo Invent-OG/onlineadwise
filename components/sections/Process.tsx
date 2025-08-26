@@ -123,13 +123,13 @@ export default function Process() {
         "
                 >
                   {/* Decorative corner accents */}
-                  <span className="absolute -top-5 -right-5 w-14 h-14 bg-yellow-500/70 rounded-full animate-pulse" />
-                  <span className="absolute -bottom-5 -left-5 w-14 h-14 bg-yellow-500/70 rounded-full animate-pulse" />
+                  <span className="absolute -top-5 -right-5 w-14 h-14 bg-neutral-800 rounded-full " />
+                  <span className="absolute -bottom-5 -left-5 w-14 h-14 bg-neutral-800 rounded-full " />
 
                   {/* Card Content */}
                   <div className="relative z-10 p-6">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="p-4 bg-gradient-to-tr from-yellow-400 to-orange-500 rounded-xl text-white text-2xl flex items-center justify-center shadow-md">
+                      <div className="p-4 bg-yellow-500 rounded-xl text-white text-2xl flex items-center justify-center shadow-md">
                         {step.icon}
                       </div>
                       <h3 className="text-2xl font-semibold text-white tracking-wide">

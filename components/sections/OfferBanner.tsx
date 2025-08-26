@@ -21,7 +21,7 @@ export default function OfferBanner() {
 
   return (
     <div className="w-full fixed bottom-0 left-0 z-50 px-2 sm:px-4">
-      <div className="relative text-center py-2 sm:py-3 font-bold text-white bg-red-600 rounded-t-lg shadow-lg">
+      <div className="relative text-center py-2 sm:py-3 font-bold text-white bg-yellow-700 rounded-t-lg shadow-lg">
         <p className="text-xs sm:text-sm md:text-base px-6">
           ⚠️ Hurry! This offer expires when we reach 10 salons or at midnight
           tonight
