@@ -4,10 +4,15 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Calendar, Phone } from "lucide-react";
-import { StarBorder } from "@/components/ui/star-border";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function CTA() {
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  const handleBookClick = () => {
+    window.open("https://calendly.com/info-onlineadwise/45min", "_blank");
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -28,7 +33,6 @@ export default function CTA() {
         }
       );
 
-      // Floating animation for background elements
       gsap.to(".floating-cta", {
         y: -15,
         duration: 3,
@@ -47,7 +51,7 @@ export default function CTA() {
       ref={sectionRef}
       className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
     >
-      {/* Background Elements */}
+      {/* Background Floating Elements */}
       <div className="absolute inset-0">
         <div className="floating-cta absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-yellow-600/10 rounded-full blur-3xl"></div>
         <div className="floating-cta absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-yellow-400/5 to-yellow-600/5 rounded-full blur-3xl"></div>
@@ -78,30 +82,23 @@ export default function CTA() {
 
           {/* Main CTA Buttons */}
           <div className="cta-element space-y-6 mb-16">
-            <StarBorder
-              color="hsl(45, 93%, 47%)"
-              speed="4s"
-              className="w-full sm:w-auto"
+            {/* Primary CTA Button */}
+            <div
+              onClick={handleBookClick}
+              className="flex items-center justify-center bg-yellow-500 text-black px-4 py-3 rounded-xl font-semibold shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300 w-full sm:w-auto mx-auto max-w-[380px] cursor-pointer"
             >
-              <div className="flex items-center justify-center">
-                <Calendar className="mr-3 h-6 w-6" />
-                Book Your Free Growth Call Now
-                <ArrowRight className="ml-3 h-6 w-6" />
-              </div>
-            </StarBorder>
+              <Calendar className="h-6 w-6 mr-3" />
+              Book Your Free Growth Call Now
+              <ArrowRight className="ml-3 h-6 w-6" />
+            </div>
 
+            {/* Secondary Contact */}
             <div className="text-center">
               <p className="text-sm text-gray-500 mb-4">Or call us directly:</p>
-              <StarBorder
-                color="hsl(45, 93%, 47%)"
-                speed="5s"
-                className="w-full sm:w-auto"
-              >
-                <div className="flex items-center justify-center">
-                  <Phone className="mr-2 h-5 w-5" />
-                  (555) 123-SALON
-                </div>
-              </StarBorder>
+              <div className="flex items-center justify-center bg-yellow-500 text-black px-6 py-3 rounded-xl font-semibold shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300 w-full sm:w-auto mx-auto max-w-[320px] cursor-pointer">
+                <Phone className="mr-2 h-5 w-5" />
+                (555) 123-SALON
+              </div>
             </div>
           </div>
 
@@ -133,34 +130,6 @@ export default function CTA() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      {/* <footer className="mt-20 pt-12 border-t border-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-                OnlineAdwise
-              </h3>
-              <p className="text-gray-400 mt-2">
-                Helping Salons & Spas Grow Since 2020
-              </p>
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-sm text-gray-500">
-              <span>© 2025 OnlineAdwise. All rights reserved.</span>
-              <span>•</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors">
-                Privacy Policy
-              </a>
-              <span>•</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors">
-                Terms of Service
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer> */}
     </section>
   );
 }
