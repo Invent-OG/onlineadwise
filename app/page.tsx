@@ -23,6 +23,7 @@ import Zooming from "@/components/sections/Zooming";
 import PackagesSection from "@/components/sections/PackagesSection";
 import ImageText from "@/components/sections/ImageText";
 import SpaParallax from "@/components/sections/SpaParallax";
+import TestVideo from "@/components/sections/TestVideo";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -48,8 +49,10 @@ export default function Home() {
     <div ref={containerRef} className="bg-black text-white overflow-hidden">
       <ScrollProgress className="" />
 
-      <Hero />
+      {/* <Hero /> */}
+      <TestVideo />
       <MarqueeText />
+
       <PainPoints />
       {/* <Solution /> */}
 
