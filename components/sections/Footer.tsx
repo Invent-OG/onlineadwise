@@ -34,12 +34,14 @@ function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="w-full  bg-gray-900 text-gray-400 py-12 border-t border-gray-800"
+      className="w-full  bg-[#171817] text-gray-400 py-12 border-t border-gray-800"
     >
       <div className="container mx-auto px-6 flex flex-wrap justify-between gap-8">
         {/* Column 1: Company Info */}
         <div className="flex-1 min-w-[150px] max-w-[250px]">
-          <h3 className="text-xl font-bold text-white mb-2">OnlineAdwise</h3>
+          <h3 className="text-xl font-bold text-white mb-2">
+            Online<span className="text-yellow-500">Ad</span>wise
+          </h3>
           <p className="text-gray-400 text-sm mb-2">
             Helping Salons & Spas Grow Since 2020
           </p>

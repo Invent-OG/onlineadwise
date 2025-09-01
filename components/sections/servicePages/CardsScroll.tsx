@@ -63,7 +63,9 @@ export default function ScrollCards() {
       ref={containerRef}
       className="w-full bg-[#171817] text-white min-h-screen py-16 px-6"
     >
-      <h1 className="text-4xl font-bold text-center mb-16">Our Projects</h1>
+      <h1 className="text-4xl  font-bold text-center mb-16">
+        Our <span className="text-yellow-500">Projects</span>
+      </h1>
 
       <div className="max-w-6xl mx-auto space-y-32">
         {projects.map((project, i) => (
@@ -84,7 +86,7 @@ export default function ScrollCards() {
 
             {/* Content Section */}
             <div className="md:w-1/2 w-full bg-black/90 p-10 rounded-xl text-left relative">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl text-yellow-500 md:text-4xl font-bold mb-6">
                 {project.title}
               </h2>
               <div className="space-y-3 text-gray-300">
