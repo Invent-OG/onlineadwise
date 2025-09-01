@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function NavBar() {
     };
   }, []);
 
-  // Smooth scroll on link click
+  // Smooth scroll for in-page navigation
   const handleLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
@@ -52,8 +53,8 @@ export default function NavBar() {
       if (target) {
         target.scrollIntoView({ behavior: "smooth" });
       }
-      setOpen(false);
     }
+    setOpen(false);
   };
 
   return (
@@ -71,37 +72,53 @@ export default function NavBar() {
         className={`fixed top-0 left-0 h-full w-[70%] bg-[#090d12] flex flex-col items-center justify-center transform transition-transform duration-300 z-50 shadow-2xl
         ${open ? "translate-x-0" : "-translate-x-full"}`}
       >
+        {/* Logo */}
         <div className="fixed top-0 left-0 p-4 text-2xl font-bold text-yellow-500 z-50">
           OnlineAdwise
         </div>
-        <a
-          href="#home"
+
+        {/* Nav Links */}
+        <Link
+          href="/"
           onClick={handleLinkClick}
           className="w-full text-center py-4 text-white uppercase hover:bg-white/10 hover:border-l-4 hover:border-r-4 border-yellow-500 transition"
         >
           Home
-        </a>
-        <a
+        </Link>
+        <Link
+          href="/services" // ✅ real Next.js route
+          onClick={() => setOpen(false)}
+          className="w-full text-center py-4 text-white uppercase hover:bg-white/10 hover:border-l-4 hover:border-r-4 border-yellow-500 transition"
+        >
+          Service
+        </Link>
+        <Link
           href="#about"
           onClick={handleLinkClick}
           className="w-full text-center py-4 text-white uppercase hover:bg-white/10 hover:border-l-4 hover:border-r-4 border-yellow-500 transition"
         >
           About
-        </a>
-        <a
+        </Link>
+        <Link
           href="#contact"
           onClick={handleLinkClick}
           className="w-full text-center py-4 text-white uppercase hover:bg-white/10 hover:border-l-4 hover:border-r-4 border-yellow-500 transition"
         >
           Contact
-        </a>
+        </Link>
 
-        {/* Trigger (hamburger) */}
+        {/* Trigger (hamburger / close button) */}
         <div
           onClick={() => setOpen(!open)}
           className="absolute top-8 -right-20 w-12 h-12 rounded-full bg-[#090d12] flex items-center justify-center cursor-pointer z-[60]"
         >
-          <span className="relative w-1/2 h-[2px] bg-white before:absolute before:content-[''] before:w-full before:h-[2px] before:bg-white before:-top-2 after:absolute after:content-[''] after:w-full after:h-[2px] after:bg-white after:top-2"></span>
+          {!open ? (
+            // Hamburger
+            <span className="relative w-1/2 h-[2px] bg-white before:absolute before:content-[''] before:w-full before:h-[2px] before:bg-white before:-top-2 after:absolute after:content-[''] after:w-full after:h-[2px] after:bg-white after:top-2"></span>
+          ) : (
+            // Close (X)
+            <span className="relative w-1/2 h-[2px] bg-white rotate-45 after:absolute after:content-[''] after:w-full after:h-[2px] after:bg-white after:-rotate-90"></span>
+          )}
         </div>
       </nav>
     </>

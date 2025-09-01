@@ -34,7 +34,7 @@ function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="w-full bg-gray-900 text-gray-400 py-12 border-t border-gray-800"
+      className="w-full  bg-gray-900 text-gray-400 py-12 border-t border-gray-800"
     >
       <div className="container mx-auto px-6 flex flex-wrap justify-between gap-8">
         {/* Column 1: Company Info */}

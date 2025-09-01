@@ -1,36 +1,65 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Gift } from "lucide-react"; // icon
+
+const offers = [
+  {
+    title: "50% OFF Today Only!",
+    desc: "Valid for the first 10 salons to sign up.",
+  },
+  {
+    title: "🔥 Free Consultation",
+    desc: "Book now and get a free strategy session.",
+  },
+  {
+    title: "⚡ Limited Time Deal",
+    desc: "Offer ends at midnight tonight!",
+  },
+];
 
 export default function OfferBanner() {
-  const [isVisible, setIsVisible] = useState(true); // controls visibility
-  const [isClosed, setIsClosed] = useState(false); // when user clicks ❌
+  const [isClosed, setIsClosed] = useState(false);
+  const [currentOffer, setCurrentOffer] = useState(0);
 
-  // show 10s, hide 10s, repeat
+  // auto cycle offers every 8s
   useEffect(() => {
-    if (isClosed) return; // stop everything if closed
+    if (isClosed) return;
 
-    const toggleInterval = setInterval(() => {
-      setIsVisible((prev) => !prev);
-    }, 10000); // every 10s toggle
+    const interval = setInterval(() => {
+      setCurrentOffer((prev) => (prev + 1) % offers.length);
+    }, 8000);
 
-    return () => clearInterval(toggleInterval);
+    return () => clearInterval(interval);
   }, [isClosed]);
 
-  if (isClosed || !isVisible) return null; // don’t render if hidden or closed
+  if (isClosed) return null;
 
   return (
-    <div className="w-full fixed bottom-0 left-0 z-50 px-2 sm:px-4">
-      <div className="relative text-center py-2 sm:py-3 font-bold text-white bg-yellow-700 rounded-t-lg shadow-lg">
-        <p className="text-xs sm:text-sm md:text-base px-6">
-          ⚠️ Hurry! This offer expires when we reach 10 salons or at midnight
-          tonight
-        </p>
+    <div className="fixed top-4 right-4 z-50">
+      <div className="relative flex items-start gap-2 sm:gap-3 bg-gradient-to-r from-yellow-500 to-yellow-700 text-white rounded-xl shadow-lg p-3 sm:p-4 w-72 sm:w-80 animate-slide-in">
+        {/* Icon */}
+        <div className="mt-1 flex-shrink-0">
+          <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+        </div>
 
-        {/* Close button */}
+        {/* Content */}
+        <div className="flex-1">
+          <h3 className="font-bold text-sm sm:text-lg">
+            {offers[currentOffer].title}
+          </h3>
+          <p className="text-xs sm:text-sm text-yellow-100">
+            {offers[currentOffer].desc}
+          </p>
+          <button className="mt-2 bg-white text-yellow-800 text-xs sm:text-sm font-semibold px-2 sm:px-3 py-1 rounded-lg shadow hover:bg-yellow-100 transition">
+            Claim Now
+          </button>
+        </div>
+
+        {/* Close Button */}
         <button
           onClick={() => setIsClosed(true)}
-          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-white font-bold text-base sm:text-lg"
+          className="absolute top-2 right-2 text-white text-sm sm:text-lg hover:text-yellow-200"
         >
           ✖
         </button>

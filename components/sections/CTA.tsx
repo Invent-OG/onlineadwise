@@ -97,7 +97,7 @@ export default function CTA() {
               <p className="text-sm text-gray-500 mb-4">Or call us directly:</p>
               <div className="flex items-center justify-center bg-yellow-500 text-black px-6 py-3 rounded-xl font-semibold shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300 w-full sm:w-auto mx-auto max-w-[320px] cursor-pointer">
                 <Phone className="mr-2 h-5 w-5" />
-                (555) 123-SALON
+                +91 8826728055
               </div>
             </div>
           </div>

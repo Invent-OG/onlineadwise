@@ -3,6 +3,20 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Search,
+  Layout,
+  Video,
+  FileText,
+  Megaphone,
+  Share2,
+  MapPin,
+  Star,
+  Mail,
+  Brush,
+  ArrowLeft,
+} from "lucide-react"; // icons
+
 import { services } from "@/lib/data/servicesdata";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,7 +24,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function SalonMarketing() {
   const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -18,10 +31,9 @@ export default function SalonMarketing() {
     const wrapper = wrapperRef.current;
 
     if (!container || !wrapper) return;
+    if (window.innerWidth < 768) return; // disable GSAP on mobile
 
-    if (window.innerWidth < 768) return; // disable GSAP horizontal scroll on mobile
-
-    // Equal height for all cards
+    // Equal height for desktop cards
     const cards = Array.from(container.children) as HTMLElement[];
     let maxHeight = 0;
     cards.forEach((card) => {
@@ -32,18 +44,16 @@ export default function SalonMarketing() {
     });
     wrapper.style.height = `${maxHeight + 40}px`;
 
-    // Extra space so last card comes to center before scroll ends
-    const extraSpace = window.innerWidth / 2; // adjust if you want fixed px (e.g. 150)
+    const extraSpace = window.innerWidth / 2;
     const totalScrollWidth =
       container.scrollWidth - wrapper.clientWidth + extraSpace;
 
-    // Horizontal scroll effect
     gsap.to(container, {
       x: -totalScrollWidth,
       ease: "none",
       scrollTrigger: {
         trigger: wrapper,
-        start: "top top",
+        start: "top 4%",
         end: () => `+=${totalScrollWidth}`,
         scrub: 1,
         pin: true,
@@ -53,6 +63,20 @@ export default function SalonMarketing() {
 
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
+
+  // ✅ Match icons to services
+  const icons = [
+    <Search size={28} key="s" />,
+    <Layout size={28} key="l" />,
+    <Megaphone size={28} key="m" />,
+    <Share2 size={28} key="sh" />,
+    <Mail size={28} key="ml" />,
+    <Star size={28} key="st" />,
+    <FileText size={28} key="ft" />,
+    <MapPin size={28} key="mp" />,
+    <Video size={28} key="v" />,
+    <Brush size={28} key="b" />,
+  ];
 
   return (
     <section className="bg-[#171817] text-white py-20 px-6 md:px-16 lg:px-24">
@@ -66,75 +90,85 @@ export default function SalonMarketing() {
         </p>
       </div>
 
-      {/* Mobile Accordion Layout */}
-      <div className="space-y-4 md:hidden">
-        {services.map((service, i) => (
-          <div
-            key={i}
-            className="bg-gradient-to-br from-[#222] to-[#111] rounded-xl shadow-md"
-          >
-            {/* Accordion Header */}
-            <button
-              onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full flex justify-between items-center p-4 text-left"
+      {/* ✅ Mobile Grid Layout */}
+      {expandedIndex === null && (
+        <div className="grid grid-cols-2 gap-4 md:hidden">
+          {services.map((service, i) => (
+            <div
+              key={i}
+              onClick={() => setExpandedIndex(i)}
+              className="bg-gradient-to-br from-[#1f1f1f] to-[#111] rounded-lg shadow-md flex flex-col items-center justify-center text-center p-6 cursor-pointer border border-gray-700 hover:border-yellow-500 transition"
             >
-              <span className="text-lg font-semibold">{service.title}</span>
-              <span className="text-yellow-500 text-xl">
-                {openIndex === i ? "−" : "+"}
-              </span>
-            </button>
+              {/* Icon */}
+              <div className="mb-3 text-yellow-500">{icons[i]}</div>
+              {/* Title */}
+              <h3 className="text-xs font-semibold uppercase tracking-wide">
+                {service.title.replace(/^✅\s*\d+\.\s*/, "")}
+              </h3>
+            </div>
+          ))}
+        </div>
+      )}
 
-            {/* Accordion Body */}
-            {openIndex === i && (
-              <div className="px-4 pb-4 text-gray-300 space-y-3">
-                <p>{service.desc}</p>
-                <ul className="list-disc list-inside text-gray-400 space-y-1">
-                  {service.points.map((point, j) => (
-                    <li key={j}>{point}</li>
-                  ))}
-                </ul>
-                <p className="text-yellow-500 font-semibold">
-                  ✨ {service.result}
-                </p>
-              </div>
-            )}
-          </div>
-        ))}
+      {/* ✅ Expanded Full Panel for Mobile */}
+      {expandedIndex !== null && (
+        <div className="md:hidden mt-6 bg-gradient-to-br from-[#222] to-[#111] rounded-xl p-6 shadow-lg border border-yellow-500 relative">
+          {/* Back button */}
+          <button
+            onClick={() => setExpandedIndex(null)}
+            className="flex items-center text-yellow-500 mb-4"
+          >
+            <ArrowLeft size={20} className="mr-2" /> Back
+          </button>
+
+          <h2 className="text-lg font-bold text-yellow-500 mb-3">
+            {services[expandedIndex].title.replace(/^✅\s*\d+\.\s*/, "")}
+          </h2>
+          <p className="mb-2 text-gray-300">{services[expandedIndex].desc}</p>
+          <ul className="list-disc list-inside space-y-1 text-gray-400">
+            {services[expandedIndex].points.map((point, j) => (
+              <li key={j}>{point}</li>
+            ))}
+          </ul>
+          <p className="mt-3 text-yellow-500 font-semibold">
+            ✨ {services[expandedIndex].result}
+          </p>
+        </div>
+      )}
+
+      {/* ✅ Bottom Buttons for Mobile */}
+      <div className="fixed bottom-0 left-0 right-0 md:hidden flex z-50">
+        <button className="w-1/2 bg-[#111] text-yellow-500 py-4 font-semibold border-r border-gray-700">
+          LIVE CHAT
+        </button>
+        <button className="w-1/2 bg-[#111] text-yellow-500 py-4 font-semibold">
+          TEXT US
+        </button>
       </div>
 
-      {/* Desktop Horizontal Scroll Layout */}
+      {/* ✅ Desktop Horizontal Scroll Layout */}
       <div
         ref={wrapperRef}
         className="relative w-full hidden md:flex items-center overflow-hidden"
       >
         <div ref={containerRef} className="flex gap-8">
           {services.map((service, i) => {
-            const isExpanded = expandedIndex === i;
             return (
               <div
                 key={i}
                 className="bg-gradient-to-br from-[#222] to-[#111] rounded-2xl p-8 w-[300px] lg:w-[350px] shadow-lg hover:shadow-2xl transition-transform duration-500 hover:-translate-y-2 flex-shrink-0 flex flex-col"
               >
-                {/* Title */}
-                <h2 className="text-2xl font-bold mb-3">{service.title}</h2>
-
-                {/* Description with Read More */}
-                <p
-                  className={`text-gray-300 mb-4 ${
-                    !isExpanded ? "line-clamp-3" : ""
-                  }`}
-                >
+                <h2 className="text-2xl font-bold mb-3">
+                  {service.title.replace(/^✅\s*\d+\.\s*/, "")}
+                </h2>
+                <p className="text-gray-300 mb-4 line-clamp-3">
                   {service.desc}
                 </p>
-
-                {/* Points */}
                 <ul className="text-gray-400 list-disc list-inside space-y-1 mb-3 flex-1">
                   {service.points.map((point, j) => (
                     <li key={j}>{point}</li>
                   ))}
                 </ul>
-
-                {/* Result */}
                 <p className="text-yellow-500 font-semibold">
                   ✨ {service.result}
                 </p>
