@@ -25,6 +25,7 @@ import ImageText from "@/components/sections/ImageText";
 import SpaParallax from "@/components/sections/SpaParallax";
 import TestVideo from "@/components/sections/TestVideo";
 import ImagesAnimation from "@/components/sections/ImagesAnimation";
+import BlogCard from "@/components/sections/BlogCard";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -53,7 +54,6 @@ export default function Home() {
       {/* <Hero /> */}
       <TestVideo />
       <MarqueeText />
-
       <PainPoints />
 
       {/* <Solution /> */}
@@ -73,6 +73,7 @@ export default function Home() {
       <Guarantee />
       <FAQ />
       <ContactForm />
+      <BlogCard />
       <CTA />
     </div>
   );
