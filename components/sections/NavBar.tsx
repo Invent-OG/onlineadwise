@@ -25,16 +25,16 @@ export default function NavBar() {
   }, [servicesHover]);
 
   const services = [
-    "Salon Suite Consulting",
-    "Web Development Apps",
-    "Search Engine Optimization",
-    "Social Media Management",
-    "Content Marketing",
-    "Google Ads",
-    "Social Media Advertising",
-    "Email Marketing",
-    "Hosting Services",
-    "Support & Maintenance",
+    "GBP Management",
+    "Website & Landing",
+    "Paid Ads",
+    "Social Media",
+    "CRM & Automation",
+    "Reputation Mgmt",
+    "Email & SMS",
+    "Local SEO",
+    "Analytics",
+    "Branding Support",
   ];
 
   return (
