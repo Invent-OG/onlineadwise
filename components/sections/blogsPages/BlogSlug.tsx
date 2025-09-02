@@ -143,7 +143,7 @@ export default function BlogSlug({ blog }: BlogSlugProps) {
       {/* Blog Card */}
       <div
         ref={cardRef}
-        className="relative z-10 bg-white shadow-2xl w-full max-w-[900px] mx-auto flex flex-col md:flex-row h-auto md:h-[450px]"
+        className="relative z-10 bg-white shadow-2xl w-full max-w-[1200px] mx-auto flex flex-col md:flex-row h-auto md:h-[540px]"
       >
         {/* Thumbnail */}
         <div className="w-full md:w-[530px] h-[250px] md:h-[320px] shadow-xl overflow-hidden md:absolute md:-top-8 md:left-8 z-10">
@@ -155,7 +155,7 @@ export default function BlogSlug({ blog }: BlogSlugProps) {
         </div>
 
         {/* Right side / content */}
-        <div className="mt-4 md:mt-0 md:ml-[590px] p-8 pt-4 flex flex-col h-auto md:h-[410px] z-10">
+        <div className="mt-4 md:mt-0 md:ml-[590px] p-8 pt-4 flex flex-col h-auto md:h-[510px] z-10">
           <h1 className="text-lg font-semibold text-[#4B4B4B]">{blog.title}</h1>
 
           {/* Author */}

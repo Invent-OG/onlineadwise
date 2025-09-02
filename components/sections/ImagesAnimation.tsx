@@ -61,7 +61,7 @@ const generateNonOverlappingTransforms = (items: PhotoStackItem[]) => {
 
 function ImagesAnimation({
   items,
-  title = "Travel Memories",
+  title = "Our Work",
   className,
 }: ImagesAnimationProps) {
   // If no items passed, use default images
