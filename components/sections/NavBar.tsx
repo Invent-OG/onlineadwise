@@ -151,8 +151,9 @@ export default function NavBar() {
         </Link>
       </nav>
 
-      {/* Hamburger */}
-      <div className="fixed top-4 left-4 z-50">
+      {/* Top Bar with Hamburger + Company Name */}
+      <div className="fixed top-4 left-4 flex items-center z-50 space-x-4">
+        {/* Hamburger */}
         <div
           onClick={() => setOpen(!open)}
           className="w-12 h-12 rounded-full bg-[#090d12] flex items-center justify-center cursor-pointer relative"
@@ -163,6 +164,11 @@ export default function NavBar() {
             <span className="relative w-1/2 h-[2px] bg-white rotate-45 after:absolute after:content-[''] after:w-full after:h-[2px] after:bg-white after:-rotate-90"></span>
           )}
         </div>
+
+        {/* Company Name */}
+        <span className="text-white font-bold text-xl select-none">
+          Online<span className="text-yellow-500">Ad</span>wise
+        </span>
       </div>
     </>
   );
