@@ -24,19 +24,6 @@ export default function NavBar() {
     }
   }, [servicesHover]);
 
-  const services = [
-    "GBP Management",
-    "Website & Landing",
-    "Paid Ads",
-    "Social Media",
-    "CRM & Automation",
-    "Reputation Mgmt",
-    "Email & SMS",
-    "Local SEO",
-    "Analytics",
-    "Branding Support",
-  ];
-
   return (
     <>
       {/* Overlay */}
@@ -78,20 +65,76 @@ export default function NavBar() {
                 ref={dropdownRef}
                 className="absolute -top-40 left-full w-64 bg-[#171817] rounded-none shadow-lg flex flex-col z-50"
               >
-                {services.map((service, index) => (
-                  <Link
-                    key={service}
-                    href={`/services#${service
-                      .toLowerCase()
-                      .replace(/\s/g, "-")}`}
-                    onClick={() => setOpen(false)}
-                    className={`px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center ${
-                      index === services.length - 1 ? "border-b-0" : ""
-                    }`}
-                  >
-                    {service}
-                  </Link>
-                ))}
+                <Link
+                  href="/services/gbp-management"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  GBP Management
+                </Link>
+                <Link
+                  href="/services/website-landing"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Website & Landing
+                </Link>
+                <Link
+                  href="/services/paid-ads"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Paid Ads
+                </Link>
+                <Link
+                  href="/services/social-media"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Social Media
+                </Link>
+                <Link
+                  href="/services/crm-automation"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  CRM & Automation
+                </Link>
+                <Link
+                  href="/services/reputation-mgmt"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Reputation Mgmt
+                </Link>
+                <Link
+                  href="/services/email-sms"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Email & SMS
+                </Link>
+                <Link
+                  href="/services/local-seo"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Local SEO
+                </Link>
+                <Link
+                  href="/services/analytics"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Analytics
+                </Link>
+                <Link
+                  href="/services/branding-support"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Branding Support
+                </Link>
               </div>
             )}
           </div>
@@ -109,20 +152,76 @@ export default function NavBar() {
             </button>
             {servicesMobile && (
               <div className="flex flex-col w-full bg-[#1f1f1f] rounded-md mt-2">
-                {services.map((service, index) => (
-                  <Link
-                    key={service}
-                    href={`/services#${service
-                      .toLowerCase()
-                      .replace(/\s/g, "-")}`}
-                    onClick={() => setOpen(false)}
-                    className={`px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center ${
-                      index === services.length - 1 ? "border-b-0" : ""
-                    }`}
-                  >
-                    {service}
-                  </Link>
-                ))}
+                <Link
+                  href="/services/gbp-management"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  GBP Management
+                </Link>
+                <Link
+                  href="/services/website-landing"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Website & Landing
+                </Link>
+                <Link
+                  href="/services/paid-ads"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Paid Ads
+                </Link>
+                <Link
+                  href="/services/social-media"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Social Media
+                </Link>
+                <Link
+                  href="/services/crm-automation"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  CRM & Automation
+                </Link>
+                <Link
+                  href="/services/reputation-mgmt"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Reputation Mgmt
+                </Link>
+                <Link
+                  href="/services/email-sms"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Email & SMS
+                </Link>
+                <Link
+                  href="/services/local-seo"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Local SEO
+                </Link>
+                <Link
+                  href="/services/analytics"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white border-b border-gray-700 hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Analytics
+                </Link>
+                <Link
+                  href="/services/branding-support"
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-white hover:bg-yellow-500 hover:text-black transition text-center"
+                >
+                  Branding Support
+                </Link>
               </div>
             )}
           </div>

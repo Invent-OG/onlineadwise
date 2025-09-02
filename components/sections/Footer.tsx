@@ -8,34 +8,8 @@ import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 gsap.registerPlugin(ScrollTrigger);
 
 function Footer() {
-  const footerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (footerRef.current) {
-      gsap.fromTo(
-        footerRef.current,
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: "top bottom",
-            end: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
-  }, []);
-
   return (
-    <footer
-      ref={footerRef}
-      className="w-full  bg-[#171817] text-gray-400 py-12 border-t border-gray-800"
-    >
+    <footer className="w-full  bg-[#171817] text-gray-400 py-12 border-t border-gray-800">
       <div className="container mx-auto px-6 flex flex-wrap justify-between gap-8">
         {/* Column 1: Company Info */}
         <div className="flex-1 min-w-[150px] max-w-[250px]">
@@ -183,6 +157,14 @@ function Footer() {
                 className="hover:text-yellow-400 transition-colors"
               >
                 Support
+              </a>
+            </li>
+            <li>
+              <a
+                href="/admin"
+                className="hover:text-yellow-400 transition-colors"
+              >
+                Admin
               </a>
             </li>
           </ul>
