@@ -1,57 +1,98 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { packages } from "@/lib/data/servicespackages";
-import { CheckCircle, Sparkles, Star, Crown } from "lucide-react"; // using lucide icons
+import { ShieldCheck, Rocket, Crown, Check } from "lucide-react";
+import gsap from "gsap";
 
 export default function PackagesSection() {
-  // icon set (cycling through for variety)
-  const icons = [CheckCircle, Sparkles, Star, Crown];
+  const icons = [ShieldCheck, Rocket, Crown];
+  const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    iconRefs.current.forEach((icon, index) => {
+      if (!icon) return;
+      const card = icon.closest(".package-card");
+      if (card) {
+        card.addEventListener("mouseenter", () => {
+          gsap.to(icon, {
+            scale: 1.3,
+            y: -10,
+            duration: 0.4,
+            ease: "power2.out",
+          });
+          gsap.to(card, {
+            backgroundColor: "#1f1f1f",
+            y: -5,
+            boxShadow: "0 10px 25px rgba(255,215,0,0.2)",
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        });
+        card.addEventListener("mouseleave", () => {
+          gsap.to(icon, {
+            scale: 1,
+            y: 0,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+          gsap.to(card, {
+            backgroundColor: "#111111",
+            y: 0,
+            boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
+            duration: 0.4,
+            ease: "power3.out",
+          });
+        });
+      }
+    });
+  }, []);
 
   return (
-    <section className="w-full bg-[#171817] py-20 px-6">
-      <div className="max-w-7xl mx-auto text-center">
+    <section className="w-full bg-[#171817] py-24 px-6">
+      <div className="max-w-6xl mx-auto text-center">
         {/* Heading */}
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-16">
-          Our Marketing Packages
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+          Your Growth Journey
         </h2>
+        <p className="text-gray-400 text-lg mb-20">
+          Start small and scale big — upgrade your package as your business
+          grows.
+        </p>
 
         {/* Cards */}
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10">
           {packages.map((pkg, index) => {
             const Icon = icons[index % icons.length];
+
             return (
               <div
                 key={index}
-                className="relative bg-[#1f1f1f] rounded-2xl shadow-[0_0_10px_rgba(255,215,0,0.4)] border border-yellow-600/40 hover:shadow-[0_0_20px_rgba(255,215,0,0.8)] transition-all duration-300 p-8 flex flex-col"
+                className="package-card flex-1 flex flex-col items-center bg-[#111111] border border-gray-800 rounded-sm shadow-lg p-8 w-[320px] h-[480px] text-left transition-all duration-300"
               >
-                {/* Title */}
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <Icon className="text-yellow-400 w-6 h-6" />
-                  <h3 className="text-2xl font-semibold text-yellow-300">
-                    {pkg.title}
-                  </h3>
+                {/* Circle Icon */}
+                <div
+                  ref={(el) => (iconRefs.current[index] = el)}
+                  className="flex items-center justify-center w-16 h-16 rounded-full bg-yellow-500 text-black shadow-lg mb-6"
+                >
+                  <Icon className="w-8 h-8" />
                 </div>
 
-                {/* Items */}
-                <ul className="flex-1 space-y-4 text-left">
+                {/* Card Content */}
+                <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+                  {pkg.title}
+                </h3>
+                <ul className="space-y-3">
                   {pkg.items.map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-3 text-gray-300 text-base"
+                      className="flex items-start gap-2 text-gray-300"
                     >
-                      <CheckCircle className="w-5 h-5 text-yellow-400 mt-1" />
+                      <Check className="w-5 h-5 text-yellow-400 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-
-                {/* Button */}
-                <div className="mt-8 flex justify-center">
-                  <button className="px-6 py-2 rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-transform">
-                    Choose Plan
-                  </button>
-                </div>
               </div>
             );
           })}
