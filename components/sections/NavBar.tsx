@@ -269,9 +269,11 @@ export default function NavBar() {
         </div>
 
         {/* Company Name */}
-        <span className="text-white font-bold text-xl select-none">
-          Online<span className="text-yellow-500">Ad</span>wise
-        </span>
+        <Link href="/" onClick={() => setOpen(false)}>
+          <span className="text-white font-bold text-xl select-none cursor-pointer">
+            Online<span className="text-yellow-500">Ad</span>wise
+          </span>
+        </Link>
       </div>
     </>
   );
