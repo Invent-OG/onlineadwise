@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useEditor, EditorContent } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
-import Image from '@tiptap/extension-image';
-import Link from '@tiptap/extension-link';
-import TextAlign from '@tiptap/extension-text-align';
+import { useEffect, useState } from "react";
+import { useEditor, EditorContent } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import Image from "@tiptap/extension-image";
+import Link from "@tiptap/extension-link";
+import TextAlign from "@tiptap/extension-text-align";
 import {
   Bold,
   Italic,
@@ -21,15 +21,18 @@ import {
   AlignRight,
   Undo,
   Redo,
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface RichTextEditorProps {
   content: string;
   onChange: (content: string) => void;
 }
 
-const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChange }) => {
+const RichTextEditor: React.FC<RichTextEditorProps> = ({
+  content,
+  onChange,
+}) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -43,11 +46,11 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChange }) =>
       Link.configure({
         openOnClick: false,
         HTMLAttributes: {
-          class: 'text-primary underline',
+          class: "text-primary underline",
         },
       }),
       TextAlign.configure({
-        types: ['heading', 'paragraph'],
+        types: ["heading", "paragraph"],
       }),
     ],
     content,
@@ -56,7 +59,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChange }) =>
     },
     editorProps: {
       attributes: {
-        class: 'p-4 min-h-[300px] prose max-w-none',
+        class: "p-4 min-h-[300px] prose max-w-none",
       },
     },
     // This avoids SSR hydration issues
@@ -70,130 +73,164 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChange }) =>
   if (!isClient || !editor) return null;
 
   const addImage = () => {
-    const url = prompt('Enter image URL');
+    const url = prompt("Enter image URL");
     if (url) editor.chain().focus().setImage({ src: url }).run();
   };
 
   const setLink = () => {
-    const previousUrl = editor.getAttributes('link').href;
-    const url = prompt('URL', previousUrl);
+    const previousUrl = editor.getAttributes("link").href;
+    const url = prompt("URL", previousUrl);
     if (url === null) return;
-    if (url === '') {
-      editor.chain().focus().extendMarkRange('link').unsetLink().run();
+    if (url === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
       return;
     }
-    editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
+    editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
   };
 
   return (
-    <div className='border rounded-md overflow-hidden'>
-      <div className='bg-muted p-2 flex flex-wrap gap-1 border-b'>
+    <div className="border rounded-md overflow-hidden">
+      <div className="bg-muted p-2 flex flex-wrap gap-1 border-b">
         <Button
-          variant='ghost'
-          size='icon'
+          variant="ghost"
+          size="icon"
           onClick={() => editor.chain().focus().toggleBold().run()}
-          className={editor.isActive('bold') ? 'bg-muted-foreground/20' : ''}
+          className={editor.isActive("bold") ? "bg-muted-foreground/20" : ""}
         >
-          <Bold className='h-4 w-4' />
+          <Bold className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
+          variant="ghost"
+          size="icon"
           onClick={() => editor.chain().focus().toggleItalic().run()}
-          className={editor.isActive('italic') ? 'bg-muted-foreground/20' : ''}
+          className={editor.isActive("italic") ? "bg-muted-foreground/20" : ""}
         >
-          <Italic className='h-4 w-4' />
+          <Italic className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
-          onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-          className={editor.isActive('heading', { level: 1 }) ? 'bg-muted-foreground/20' : ''}
+          variant="ghost"
+          size="icon"
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 1 }).run()
+          }
+          className={
+            editor.isActive("heading", { level: 1 })
+              ? "bg-muted-foreground/20"
+              : ""
+          }
         >
-          <Heading1 className='h-4 w-4' />
+          <Heading1 className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
-          onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-          className={editor.isActive('heading', { level: 2 }) ? 'bg-muted-foreground/20' : ''}
+          variant="ghost"
+          size="icon"
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 2 }).run()
+          }
+          className={
+            editor.isActive("heading", { level: 2 })
+              ? "bg-muted-foreground/20"
+              : ""
+          }
         >
-          <Heading2 className='h-4 w-4' />
+          <Heading2 className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
-          onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-          className={editor.isActive('heading', { level: 3 }) ? 'bg-muted-foreground/20' : ''}
+          variant="ghost"
+          size="icon"
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 3 }).run()
+          }
+          className={
+            editor.isActive("heading", { level: 3 })
+              ? "bg-muted-foreground/20"
+              : ""
+          }
         >
-          <Heading3 className='h-4 w-4' />
+          <Heading3 className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
+          variant="ghost"
+          size="icon"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
-          className={editor.isActive('bulletList') ? 'bg-muted-foreground/20' : ''}
+          className={
+            editor.isActive("bulletList") ? "bg-muted-foreground/20" : ""
+          }
         >
-          <List className='h-4 w-4' />
+          <List className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
+          variant="ghost"
+          size="icon"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
-          className={editor.isActive('orderedList') ? 'bg-muted-foreground/20' : ''}
+          className={
+            editor.isActive("orderedList") ? "bg-muted-foreground/20" : ""
+          }
         >
-          <ListOrdered className='h-4 w-4' />
+          <ListOrdered className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
+          variant="ghost"
+          size="icon"
           onClick={setLink}
-          className={editor.isActive('link') ? 'bg-muted-foreground/20' : ''}
+          className={editor.isActive("link") ? "bg-muted-foreground/20" : ""}
         >
-          <LinkIcon className='h-4 w-4' />
+          <LinkIcon className="h-4 w-4" />
         </Button>
-        <Button variant='ghost' size='icon' onClick={addImage}>
-          <ImageIcon className='h-4 w-4' />
+        <Button variant="ghost" size="icon" onClick={addImage}>
+          <ImageIcon className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
-          onClick={() => editor.chain().focus().setTextAlign('left').run()}
-          className={editor.isActive({ textAlign: 'left' }) ? 'bg-muted-foreground/20' : ''}
+          variant="ghost"
+          size="icon"
+          onClick={() => editor.chain().focus().setTextAlign("left").run()}
+          className={
+            editor.isActive({ textAlign: "left" })
+              ? "bg-muted-foreground/20"
+              : ""
+          }
         >
-          <AlignLeft className='h-4 w-4' />
+          <AlignLeft className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
-          onClick={() => editor.chain().focus().setTextAlign('center').run()}
-          className={editor.isActive({ textAlign: 'center' }) ? 'bg-muted-foreground/20' : ''}
+          variant="ghost"
+          size="icon"
+          onClick={() => editor.chain().focus().setTextAlign("center").run()}
+          className={
+            editor.isActive({ textAlign: "center" })
+              ? "bg-muted-foreground/20"
+              : ""
+          }
         >
-          <AlignCenter className='h-4 w-4' />
+          <AlignCenter className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
-          onClick={() => editor.chain().focus().setTextAlign('right').run()}
-          className={editor.isActive({ textAlign: 'right' }) ? 'bg-muted-foreground/20' : ''}
+          variant="ghost"
+          size="icon"
+          onClick={() => editor.chain().focus().setTextAlign("right").run()}
+          className={
+            editor.isActive({ textAlign: "right" })
+              ? "bg-muted-foreground/20"
+              : ""
+          }
         >
-          <AlignRight className='h-4 w-4' />
+          <AlignRight className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
+          variant="ghost"
+          size="icon"
           onClick={() => editor.chain().focus().undo().run()}
           disabled={!editor.can().undo()}
         >
-          <Undo className='h-4 w-4' />
+          <Undo className="h-4 w-4" />
         </Button>
         <Button
-          variant='ghost'
-          size='icon'
+          variant="ghost"
+          size="icon"
           onClick={() => editor.chain().focus().redo().run()}
           disabled={!editor.can().redo()}
         >
-          <Redo className='h-4 w-4' />
+          <Redo className="h-4 w-4" />
         </Button>
       </div>
 

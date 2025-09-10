@@ -326,7 +326,7 @@ export default function HeroMakeSection() {
 
               <div className="hero-img relative w-full max-w-5xl h-[60vh] md:h-[80vh] mt-8 overflow-hidden rounded-md">
                 <img
-                  src="https://zajno-storage0.s3.us-west-1.amazonaws.com/dev/codepen/vsimdim/hero/hero.jpg"
+                  src="https://images.pexels.com/photos/14256897/pexels-photo-14256897.jpeg?_gl=1*11nq2hn*_ga*MTc0MTUyODg5Mi4xNzUyNzM0NTIy*_ga_8JE65Q40S6*czE3NTc1MTI0NDIkbzIxJGcxJHQxNzU3NTEyNDg4JGoxNCRsMCRoMA.."
                   alt="Vsimdim"
                   className="w-full h-full object-cover object-center"
                 />
@@ -367,7 +367,7 @@ export default function HeroMakeSection() {
                 <div className="gallery-main w-full h-full">
                   <div className="gallery-item relative w-full h-full overflow-hidden rounded-md">
                     <img
-                      src="https://zajno-storage0.s3.us-west-1.amazonaws.com/dev/codepen/vsimdim/gallery/gallery-1-new.jpg"
+                      src="https://images.pexels.com/photos/6663367/pexels-photo-6663367.jpeg?_gl=1*bg5u0s*_ga*MTc0MTUyODg5Mi4xNzUyNzM0NTIy*_ga_8JE65Q40S6*czE3NTc1MTI0NDIkbzIxJGcxJHQxNzU3NTEyNTc2JGo2MCRsMCRoMA.."
                       alt="Gallery image 1"
                       className="w-full h-full object-cover object-center"
                     />
@@ -379,7 +379,7 @@ export default function HeroMakeSection() {
                 <div className="gallery-main w-full h-full">
                   <div className="gallery-item relative w-full h-full overflow-hidden rounded-md">
                     <img
-                      src="https://zajno-storage0.s3.us-west-1.amazonaws.com/dev/codepen/vsimdim/gallery/gallery-2-new.jpg"
+                      src="https://images.pexels.com/photos/6663563/pexels-photo-6663563.jpeg?_gl=1*fejycf*_ga*MTc0MTUyODg5Mi4xNzUyNzM0NTIy*_ga_8JE65Q40S6*czE3NTc1MTI0NDIkbzIxJGcxJHQxNzU3NTEyNjExJGoyNSRsMCRoMA.."
                       alt="Gallery image 2"
                       className="w-full h-full object-cover object-center"
                     />
