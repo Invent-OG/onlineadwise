@@ -161,7 +161,7 @@ function Footer() {
             </li>
             <li>
               <a
-                href="/admin"
+                href="/admin/login"
                 className="hover:text-yellow-400 transition-colors"
               >
                 Admin

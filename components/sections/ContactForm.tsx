@@ -13,8 +13,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-gsap.registerPlugin(ScrollTrigger); // ✅ Needed!
 
+gsap.registerPlugin(ScrollTrigger); // ✅ Needed!
 
 export default function ContactForm() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -22,12 +22,14 @@ export default function ContactForm() {
     name: "",
     email: "",
     phone: "",
-    businessName: "",
+    business: "",
     location: "",
-    currentBookings: "",
-    message: "",
+    booking: "",
+    interest: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -48,7 +50,6 @@ export default function ContactForm() {
         }
       );
 
-      // Floating animation for background elements
       gsap.to(".floating-form", {
         y: -10,
         duration: 3,
@@ -73,26 +74,40 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
+    setLoading(true);
+    setErrorMsg("");
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        businessName: "",
-        location: "",
-        currentBookings: "",
-        message: "",
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      if (res.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          business: "",
+          location: "",
+          booking: "",
+          interest: "",
+        });
+      } else {
+        const err = await res.json();
+        setErrorMsg(err.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setErrorMsg("Network error. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
+  console.log("Submitting formData:", formData);
 
   if (isSubmitted) {
     return (
@@ -308,8 +323,8 @@ export default function ContactForm() {
                     <input
                       type="text"
                       id="businessName"
-                      name="businessName"
-                      value={formData.businessName}
+                      name="business"
+                      value={formData.business}
                       onChange={handleInputChange}
                       required
                       className="w-full px-5 py-4 bg-gray-700/50 border border-gray-600/40 rounded-2xl text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none transition-all duration-300"
@@ -346,8 +361,8 @@ export default function ContactForm() {
                     </label>
                     <select
                       id="currentBookings"
-                      name="currentBookings"
-                      value={formData.currentBookings}
+                      name="booking"
+                      value={formData.booking}
                       onChange={handleInputChange}
                       className="w-full px-5 py-4 bg-gray-700/50 border border-gray-600/40 rounded-2xl text-white focus:border-yellow-400 focus:outline-none transition-all duration-300"
                     >
@@ -369,8 +384,8 @@ export default function ContactForm() {
                   </label>
                   <textarea
                     id="message"
-                    name="message"
-                    value={formData.message}
+                    name="interest"
+                    value={formData.interest}
                     onChange={handleInputChange}
                     rows={4}
                     className="w-full px-5 py-4 bg-gray-700/50 border border-gray-600/40 rounded-2xl text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none transition-all duration-300 resize-none"
@@ -380,12 +395,23 @@ export default function ContactForm() {
 
                 <Button
                   type="submit"
+                  disabled={loading}
                   className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold py-5 text-lg rounded-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                 >
-                  <Calendar className="h-5 w-5" />
-                  Book My Free Growth Call
-                  <ArrowRight className="h-5 w-5" />
+                  {loading ? (
+                    "Submitting..."
+                  ) : (
+                    <>
+                      <Calendar className="h-5 w-5" />
+                      Book My Free Growth Call
+                      <ArrowRight className="h-5 w-5" />
+                    </>
+                  )}
                 </Button>
+
+                {errorMsg && (
+                  <p className="text-center text-red-400 text-sm">{errorMsg}</p>
+                )}
 
                 <p className="text-xs text-gray-400 text-center mt-4">
                   By submitting this form, you agree to receive communications

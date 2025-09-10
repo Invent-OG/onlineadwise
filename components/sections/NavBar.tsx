@@ -3,11 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const [servicesHover, setServicesHover] = useState(false); // desktop hover
   const [servicesMobile, setServicesMobile] = useState(false); // mobile click
+  const pathName = usePathname();
   const servicesRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -23,6 +25,8 @@ export default function NavBar() {
       }
     }
   }, [servicesHover]);
+
+  if (pathName?.includes("/admin")) return null;
 
   return (
     <>

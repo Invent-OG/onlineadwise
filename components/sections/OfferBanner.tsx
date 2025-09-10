@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { Gift } from "lucide-react"; // icon
+import { usePathname } from "next/navigation";
 
 const offers = [
   {
@@ -21,6 +22,7 @@ const offers = [
 export default function OfferBanner() {
   const [isClosed, setIsClosed] = useState(false);
   const [currentOffer, setCurrentOffer] = useState(0);
+  const pathName = usePathname();
 
   // auto cycle offers every 8s
   useEffect(() => {
@@ -34,6 +36,8 @@ export default function OfferBanner() {
   }, [isClosed]);
 
   if (isClosed) return null;
+
+  if (pathName?.includes("/admin")) return null;
 
   return (
     <div className="fixed top-4 right-4 z-50">
