@@ -239,11 +239,18 @@ export default function NavBar() {
           Blogs
         </Link>
         <Link
-          href="#about"
+          href="/about"
           onClick={() => setOpen(false)}
           className="w-full text-center py-4 text-white uppercase hover:bg-white/10 transition"
         >
           About
+        </Link>
+        <Link
+          href="/portfolio"
+          onClick={() => setOpen(false)}
+          className="w-full text-center py-4 text-white uppercase hover:bg-white/10 transition"
+        >
+          Portfolio
         </Link>
         <Link
           href="/contacts"

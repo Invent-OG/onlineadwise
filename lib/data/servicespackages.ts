@@ -1,6 +1,6 @@
 export const packages = [
   {
-    title: "🔹 Starter Package",
+    title: " Starter Package",
     items: [
       "Google Business Profile Setup & Management",
       "Social Media Posting (8–12 posts/month)",
@@ -8,7 +8,7 @@ export const packages = [
     ],
   },
   {
-    title: "🔹 Growth Package",
+    title: " Growth Package",
     items: [
       "Google Ads & Meta Ads Management",
       "Landing Page & Funnel Setup (GoHighLevel)",
@@ -17,7 +17,7 @@ export const packages = [
     ],
   },
   {
-    title: "🔹 Premium Package",
+    title: " Premium Package",
     items: [
       "Full Funnel Marketing (Google + Meta + YouTube Ads)",
       "Advanced CRM Automation (loyalty, reactivation, VIP offers)",
