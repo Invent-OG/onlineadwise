@@ -1,63 +1,136 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import { useEffect, useState } from "react";
+import gsap from "gsap";
 import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function GbpHero() {
-  const imgRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
+export default function HeroFullBG() {
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    // Floating animation for the image (all devices)
-    if (imgRef.current) {
-      gsap.to(imgRef.current, {
-        y: -20,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      });
-    }
+    // Animate headline
+    gsap.fromTo(
+      ".headline span",
+      { y: 60, opacity: 0 },
+      { y: 0, opacity: 1, stagger: 0.15, duration: 1, ease: "power3.out" }
+    );
+
+    // Subtitle fade in
+    gsap.fromTo(
+      ".sub-text",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 1, delay: 0.8, ease: "power2.out" }
+    );
+
+    // Buttons pop in
+    gsap.fromTo(
+      ".cta-btn",
+      { scale: 0.8, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 0.6,
+        delay: 1.2,
+        ease: "back.out(1.5)",
+      }
+    );
   }, []);
 
   return (
-    <section className="relative bg-white overflow-hidden">
-      {/* Background texture grid with parallax */}
-      <div
-        ref={bgRef}
-        className="absolute inset-0 bg-[linear-gradient(to_right,#f3f4f6_1px,transparent_1px),linear-gradient(to_bottom,#f3f4f6_1px,transparent_1px)] bg-[size:40px_40px]"
-      />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-white px-6 md:px-12">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80"
+          alt="Background"
+          fill
+          className="object-cover object-center"
+        />
+        {/* Left-side black gradient shadow */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+      </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left Content */}
-        <div className="z-10 text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight">
-            GBP <span className="text-yellow-500">Management</span> &{" "}
-            <br className="hidden sm:block" /> GBP{" "}
-            <span className="text-yellow-500">Marketing</span> Services
-          </h1>
-          <p className="text-gray-600 mt-6 text-base sm:text-lg max-w-xl mx-auto md:mx-0">
-            Geeks that get your business found by local customers!
-          </p>
-          <button className="mt-8 bg-yellow-500 text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-sm shadow-lg hover:bg-yellow-500 transition">
-            See Our GBP Plans
+      {/* Centered Content */}
+      <div className="relative z-10 max-w-3xl text-center space-y-8">
+        {/* Headline */}
+        <h1 className="headline text-4xl md:text-6xl font-extrabold leading-tight">
+          <span className="block text-yellow-500">GBP Management</span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="sub-text text-gray-300 text-lg md:text-xl tracking-wide">
+          Your practice area and geographic location are unique. While digital
+          advertising does have some “absolutes” in terms of best practices, we
+          also recognize that every client needs a customized strategy to fit
+          their business.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          {/* Let’s Talk Button */}
+          <button className="cta-btn flex items-center justify-center gap-2 bg-yellow-500 text-black px-6 py-3 rounded-md font-semibold text-lg shadow-lg hover:shadow-xl transition duration-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2 8l10 6 10-6-10-6-10 6z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2 16l10 6 10-6"
+              />
+            </svg>
+            LET&apos;S TALK
+          </button>
+
+          {/* Play Video Button */}
+          <button
+            onClick={() => setShowVideo(true)}
+            className="cta-btn flex items-center justify-center gap-2 border border-yellow-500 text-yellow-500 px-6 py-3 rounded-md font-semibold text-lg shadow hover:shadow-lg transition duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 3v18l15-9L5 3z" />
+            </svg>
+            PLAY VIDEO
           </button>
         </div>
 
-        {/* Right Image with floating effect */}
-        <div ref={imgRef} className="z-10 flex justify-center md:justify-end">
-          <Image
-            src="https://gbpgeeks.com/wp-content/uploads/2025/07/GBP-Marketing-Services.png"
-            alt="GBP Marketing Services"
-            width={500}
-            height={500}
-            className="w-[320px] sm:w-[360px] md:w-[450px] lg:w-[500px] h-auto"
-            priority
-          />
-        </div>
+        {/* Video Modal */}
+        {showVideo && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+            <div className="relative w-full max-w-3xl p-4">
+              <button
+                onClick={() => setShowVideo(false)}
+                className="absolute top-2 right-2 text-white text-2xl font-bold"
+              >
+                &times;
+              </button>
+              <div className="w-full aspect-video">
+                <iframe
+                  className="w-full h-full rounded-md"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                  title="Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

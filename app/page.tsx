@@ -55,14 +55,12 @@ export default function Home() {
       <TestVideo />
       <MarqueeText />
       <PainPoints />
-
       {/* <Solution /> */}
-
-      <Slider />
       <SalonMarketing />
+      <Slider />
       <PackagesSection />
-      <ImageText />
-      <SpaParallax />
+      {/* <ImageText /> */}
+      {/* <SpaParallax /> */}
       {/* <Zooming /> */}
       <Benefits />
       <ImagesAnimation />

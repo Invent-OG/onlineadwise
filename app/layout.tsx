@@ -4,7 +4,6 @@ import { Jost, Caveat } from "next/font/google";
 import OfferBanner from "@/components/sections/OfferBanner";
 import NavBar from "@/components/sections/NavBar";
 import { Providers } from "./providers";
-
 const jost = Jost({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],

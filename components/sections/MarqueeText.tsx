@@ -16,25 +16,25 @@ const MarqueeText = () => {
           <span className="mx-6 text-lg font-extrabold text-white">
             ▪{" "}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
-              WEBSITE DESIGN
+              WEBSITE & LANDING
             </span>
           </span>
           <span className="mx-6 text-lg font-extrabold text-white">
             ▪{" "}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
-              VIDEO & PHOTOGRAPHY
+              PAID ADS
             </span>
           </span>
           <span className="mx-6 text-lg font-extrabold text-white">
             ▪{" "}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
-              GRAPHIC DESIGN
+              CRM & AUTOMATION
             </span>
           </span>
           <span className="mx-6 text-lg font-extrabold text-white">
             ▪{" "}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
-              BRAND STRATEGY
+              LOCAL SEO
             </span>
           </span>
         </div>
@@ -50,25 +50,25 @@ const MarqueeText = () => {
           <span className="mx-6 text-lg font-extrabold text-white">
             ▪{" "}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
-              WEBSITE DESIGN
+              WEBSITE & LANDING
             </span>
           </span>
           <span className="mx-6 text-lg font-extrabold text-white">
             ▪{" "}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
-              VIDEO & PHOTOGRAPHY
+              PAID ADS
             </span>
           </span>
           <span className="mx-6 text-lg font-extrabold text-white">
             ▪{" "}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
-              GRAPHIC DESIGN
+              CRM & AUTOMATION
             </span>
           </span>
           <span className="mx-6 text-lg font-extrabold text-white">
             ▪{" "}
             <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
-              BRAND STRATEGY
+              LOCAL SEO
             </span>
           </span>
         </div>
