@@ -26,6 +26,7 @@ import SpaParallax from "@/components/sections/SpaParallax";
 import TestVideo from "@/components/sections/TestVideo";
 import ImagesAnimation from "@/components/sections/ImagesAnimation";
 import BlogCard from "@/components/sections/BlogCard";
+import StickyShowcase from "@/components/sections/StickyShowcase";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -57,6 +58,7 @@ export default function Home() {
       <PainPoints />
       {/* <Solution /> */}
       <SalonMarketing />
+      {/* <StickyShowcase /> */}
       <Slider />
       <PackagesSection />
       {/* <ImageText /> */}
