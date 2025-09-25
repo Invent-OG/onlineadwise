@@ -21,12 +21,10 @@ function GbpHero() {
   const statsRef = useRef<HTMLDivElement>(null);
   const dashboardRef = useRef<HTMLDivElement>(null);
 
-  // Handle contact navigation
   const handleContactClick = () => {
     router.push("/contact");
   };
 
-  // Handle video modal
   const handlePlayVideo = () => {
     setIsVideoOpen(true);
   };
@@ -39,7 +37,6 @@ function GbpHero() {
     }
   };
 
-  // Close video on ESC key
   useEffect(() => {
     const handleEscKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -60,7 +57,6 @@ function GbpHero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Parallax background effect
       gsap.to(imageRef.current, {
         y: -80,
         scale: 1.05,
@@ -73,16 +69,11 @@ function GbpHero() {
         },
       });
 
-      // Title animation with character stagger
       const titleChars = titleRef.current?.querySelectorAll(".char");
       if (titleChars && titleChars.length > 0) {
         gsap.fromTo(
           titleChars,
-          {
-            y: 100,
-            opacity: 0,
-            rotationX: 90,
-          },
+          { y: 100, opacity: 0, rotationX: 90 },
           {
             y: 0,
             opacity: 1,
@@ -95,20 +86,12 @@ function GbpHero() {
         );
       }
 
-      // Subtitle animation
       gsap.fromTo(
         subtitleRef.current,
         { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          delay: 1,
-        }
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 1 }
       );
 
-      // Features list animation
       const features = featuresRef.current?.children;
       if (features && features.length > 0) {
         gsap.fromTo(
@@ -129,7 +112,6 @@ function GbpHero() {
         );
       }
 
-      // CTA buttons animation
       gsap.fromTo(
         ctaRef.current,
         { scale: 0, opacity: 0 },
@@ -142,7 +124,6 @@ function GbpHero() {
         }
       );
 
-      // Stats counter animation
       const statNumbers = statsRef.current?.querySelectorAll(".stat-number");
       statNumbers?.forEach((stat) => {
         const target = parseInt(stat.getAttribute("data-target") || "0");
@@ -160,7 +141,6 @@ function GbpHero() {
         });
       });
 
-      // Dashboard card animation
       gsap.fromTo(
         dashboardRef.current,
         { y: 100, opacity: 0, rotationY: 10 },
@@ -178,7 +158,6 @@ function GbpHero() {
         }
       );
 
-      // Floating elements
       const floatingElements =
         heroRef.current?.querySelectorAll(".floating-element");
       floatingElements?.forEach((element, index) => {
@@ -208,58 +187,56 @@ function GbpHero() {
     <>
       <div
         ref={heroRef}
-        className="min-h-screen relative overflow-hidden bg-black"
+        className="min-h-screen relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white"
       >
-        {/* Background Image */}
+        {/* Background Image (subtle faded) */}
         <div
           ref={imageRef}
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat opacity-70"
         />
 
-        {/* Black Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/90" />
-        {/* Floating Elements */}
+        {/* White Gradient Overlay */}
+
+        {/* Floating Elements (light gray now) */}
         <div className="absolute inset-0">
-          <div className="floating-element absolute top-20 left-10 w-24 h-24 bg-yellow-500/20 rounded-full blur-xl" />
-          <div className="floating-element absolute bottom-32 right-20 w-20 h-20 bg-yellow-500/15 rounded-full blur-lg" />
-          <div className="floating-element absolute top-1/3 right-1/4 w-16 h-16 bg-yellow-500/10 rounded-full blur-lg" />
+          <div className="floating-element absolute top-20 left-10 w-24 h-24 bg-black/5 rounded-full blur-xl" />
+          <div className="floating-element absolute bottom-32 right-20 w-20 h-20 bg-black/10 rounded-full blur-lg" />
+          <div className="floating-element absolute top-1/3 right-1/4 w-16 h-16 bg-black/5 rounded-full blur-lg" />
         </div>
 
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
         <div className="relative z-10 container mx-auto px-4 py-20 lg:py-32">
-          {/* Layout Variant 1: Split Screen with Dashboard */}
+          {/* Split Layout */}
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
             {/* Left Content */}
             <div className="space-y-8">
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-3 bg-yellow-500/10 backdrop-blur-sm border border-yellow-500/20 rounded-full px-6 py-3">
-                <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse" />
-                <span className="text-yellow-400 font-semibold text-sm">
+              <div className="inline-flex items-center gap-3 bg-black/5 backdrop-blur-sm border border-black/10 rounded-full px-6 py-3">
+                <div className="w-2 h-2 bg-black rounded-full animate-pulse" />
+                <span className="text-black font-semibold text-sm">
                   🏆 #1 GBP Management Platform 2024
                 </span>
               </div>
 
-              {/* Main Title */}
+              {/* Title */}
               <h1
                 ref={titleRef}
-                className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight"
+                className="text-5xl md:text-6xl lg:text-7xl font-black text-black leading-tight"
               >
-                <span className="text-yellow-500">
-                  {renderAnimatedTitle("GBP")}
-                </span>
+                <span className="text-black">{renderAnimatedTitle("GBP")}</span>
                 <br />
-                <span className="text-white">
+                <span className="text-gray-900">
                   {renderAnimatedTitle("Management")}
                 </span>
-                <span className="text-yellow-500">.</span>
+                <span className="text-black">.</span>
               </h1>
 
               {/* Subtitle */}
               <p
                 ref={subtitleRef}
-                className="text-xl text-gray-300 leading-relaxed"
+                className="text-xl text-gray-700 leading-relaxed"
               >
                 Dominate local search results with our AI-powered Google
                 Business Profile management. Increase visibility, drive
@@ -267,7 +244,7 @@ function GbpHero() {
                 enterprise-grade tools.
               </p>
 
-              {/* Key Features */}
+              {/* Features */}
               <div ref={featuresRef} className="space-y-4">
                 {[
                   "🚀 AI-powered profile optimization",
@@ -279,9 +256,9 @@ function GbpHero() {
                 ].map((feature, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-4 text-gray-300"
+                    className="flex items-center gap-4 text-gray-700"
                   >
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0" />
+                    <div className="w-2 h-2 bg-black rounded-full flex-shrink-0" />
                     <span className="font-medium">{feature}</span>
                   </div>
                 ))}
@@ -294,7 +271,7 @@ function GbpHero() {
               >
                 <button
                   onClick={handleContactClick}
-                  className="group relative bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-500/25"
+                  className="group relative bg-yellow-500 hover:bg-gray-900 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-gray-400/50"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Let&apos;s Talk
@@ -314,7 +291,7 @@ function GbpHero() {
 
                 <button
                   onClick={handlePlayVideo}
-                  className="group bg-black/50 backdrop-blur-sm border-2 border-yellow-500/30 hover:border-yellow-500 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+                  className="group bg-white border-2 border-black/30 hover:border-black text-black font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
                 >
                   <span className="flex items-center gap-2">
                     <svg
@@ -334,72 +311,68 @@ function GbpHero() {
               </div>
             </div>
 
-            {/* Right Content - Dashboard Preview */}
+            {/* Right Content */}
             <div className="relative">
               <div
                 ref={dashboardRef}
-                className="bg-gray-900/80 backdrop-blur-md border border-yellow-500/20 rounded-2xl p-6 shadow-2xl"
+                className="bg-white/80 backdrop-blur-md border border-black/10 rounded-2xl p-6 shadow-2xl"
               >
                 <div className="space-y-6">
-                  {/* Dashboard Header */}
+                  {/* Header */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-yellow-500 rounded-xl flex items-center justify-center">
-                        <span className="text-black font-bold text-lg">G</span>
+                      <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
+                        <span className="text-white font-bold text-lg">G</span>
                       </div>
                       <div>
-                        <h3 className="text-white font-bold">
+                        <h3 className="text-black font-bold">
                           Business Dashboard
                         </h3>
-                        <p className="text-yellow-400 text-sm">
+                        <p className="text-yellow-500 text-sm">
                           ● Live Analytics
                         </p>
                       </div>
                     </div>
-                    <div className="text-green-400 text-sm font-medium">
+                    <div className="text-yellow-500 text-sm font-medium">
                       Active
                     </div>
                   </div>
 
-                  {/* Performance Metrics */}
+                  {/* Metrics */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-black/50 rounded-lg p-4 text-center">
-                      <div className="text-2xl font-bold text-yellow-500">
-                        94%
-                      </div>
-                      <div className="text-gray-400 text-sm">Optimization</div>
+                    <div className="bg-gray-100 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-black">94%</div>
+                      <div className="text-gray-600 text-sm">Optimization</div>
                     </div>
-                    <div className="bg-black/50 rounded-lg p-4 text-center">
-                      <div className="text-2xl font-bold text-yellow-500">
-                        4.9★
-                      </div>
-                      <div className="text-gray-400 text-sm">Rating</div>
+                    <div className="bg-gray-100 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-black">4.9★</div>
+                      <div className="text-gray-600 text-sm">Rating</div>
                     </div>
                   </div>
 
-                  {/* Progress Bars */}
+                  {/* Progress */}
                   <div className="space-y-4">
                     <div>
-                      <div className="flex justify-between text-gray-400 text-sm mb-2">
+                      <div className="flex justify-between text-gray-600 text-sm mb-2">
                         <span>Visibility Score</span>
                         <span>87/100</span>
                       </div>
-                      <div className="w-full bg-gray-800 rounded-full h-2">
+                      <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-yellow-500 h-2 rounded-full"
+                          className="bg-black h-2 rounded-full"
                           style={{ width: "87%" }}
                         ></div>
                       </div>
                     </div>
 
                     <div>
-                      <div className="flex justify-between text-gray-400 text-sm mb-2">
+                      <div className="flex justify-between text-gray-600 text-sm mb-2">
                         <span>Monthly Growth</span>
                         <span>+45%</span>
                       </div>
-                      <div className="w-full bg-gray-800 rounded-full h-2">
+                      <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-green-500 h-2 rounded-full"
+                          className="bg-yellow-500 h-2 rounded-full"
                           style={{ width: "45%" }}
                         ></div>
                       </div>
@@ -408,22 +381,20 @@ function GbpHero() {
                 </div>
               </div>
 
-              {/* Floating Stats Card */}
-              <div className="absolute -bottom-6 -right-6 bg-yellow-500/10 backdrop-blur-sm border border-yellow-500/20 rounded-xl p-4">
+              {/* Floating Card */}
+              <div className="absolute -bottom-6 -right-6 bg-black/5 backdrop-blur-sm border border-black/10 rounded-xl p-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-yellow-500">
-                    +245%
-                  </div>
-                  <div className="text-white text-sm">Visibility Boost</div>
+                  <div className="text-2xl font-bold text-black">+245%</div>
+                  <div className="text-gray-700 text-sm">Visibility Boost</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Layout Variant 2: Stats Section */}
+          {/* Stats */}
           <div
             ref={statsRef}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mt-20 pt-12 border-t border-yellow-500/20"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mt-20 pt-12 border-t border-black/10"
           >
             {[
               {
@@ -452,21 +423,21 @@ function GbpHero() {
               },
             ].map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="text-3xl lg:text-4xl font-black text-yellow-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-3xl lg:text-4xl font-black text-black mb-2 group-hover:scale-110 transition-transform duration-300">
                   <span className="stat-number" data-target={stat.number}>
                     0
                   </span>
                   {stat.suffix}
                 </div>
-                <div className="text-white font-semibold mb-1">
+                <div className="text-black font-semibold mb-1">
                   {stat.label}
                 </div>
-                <div className="text-gray-400 text-sm">{stat.description}</div>
+                <div className="text-gray-600 text-sm">{stat.description}</div>
               </div>
             ))}
           </div>
 
-          {/* Layout Variant 3: Feature Highlights */}
+          {/* Highlights */}
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
             {[
               {
@@ -505,22 +476,22 @@ function GbpHero() {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="bg-gray-900/50 backdrop-blur-sm border border-yellow-500/10 rounded-xl p-6 hover:border-yellow-500/30 transition-all duration-300"
+                className="bg-gray-50 backdrop-blur-sm border border-black/10 rounded-xl p-6 hover:border-black/30 transition-all duration-300"
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-white font-bold text-lg mb-3">
+                <h3 className="text-black font-bold text-lg mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-300 text-sm mb-4">
+                <p className="text-gray-700 text-sm mb-4">
                   {feature.description}
                 </p>
                 <ul className="space-y-2">
                   {feature.features.map((item, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center gap-2 text-yellow-400 text-sm"
+                      className="flex items-center gap-2 text-black text-sm"
                     >
-                      <div className="w-1 h-1 bg-yellow-500 rounded-full" />
+                      <div className="w-1 h-1 bg-black rounded-full" />
                       {item}
                     </li>
                   ))}
@@ -533,10 +504,10 @@ function GbpHero() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <div className="animate-bounce">
-            <div className="w-6 h-10 border-2 border-yellow-500/30 rounded-full flex justify-center mx-auto">
-              <div className="w-1 h-3 bg-yellow-500/70 rounded-full mt-2" />
+            <div className="w-6 h-10 border-2 border-black/20 rounded-full flex justify-center mx-auto">
+              <div className="w-1 h-3 bg-black/70 rounded-full mt-2" />
             </div>
-            <p className="text-yellow-400/60 text-sm mt-2 text-center">
+            <p className="text-black/60 text-sm mt-2 text-center">
               Scroll to Discover More
             </p>
           </div>
@@ -547,10 +518,9 @@ function GbpHero() {
       {isVideoOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
           <div className="relative w-full max-w-4xl mx-4">
-            {/* Close Button */}
             <button
               onClick={handleCloseVideo}
-              className="absolute -top-12 right-0 text-white hover:text-yellow-500 transition-colors duration-300 z-10"
+              className="absolute -top-12 right-0 text-white hover:text-black transition-colors duration-300 z-10"
             >
               <svg
                 className="w-8 h-8"
@@ -567,7 +537,6 @@ function GbpHero() {
               </svg>
             </button>
 
-            {/* Video Container */}
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
               <video
                 ref={videoRef}
@@ -581,8 +550,7 @@ function GbpHero() {
                 Your browser does not support the video tag.
               </video>
 
-              {/* Fallback if video doesn't load */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-yellow-500/10 to-black/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-black/40 to-black/60">
                 <div className="text-center text-white">
                   <svg
                     className="w-16 h-16 mx-auto mb-4 opacity-50"
@@ -601,7 +569,6 @@ function GbpHero() {
               </div>
             </div>
 
-            {/* Video Description */}
             <div className="mt-4 text-center text-white">
               <h3 className="text-xl font-bold">
                 GBP Management Platform Demo

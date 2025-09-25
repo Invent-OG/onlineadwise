@@ -89,7 +89,7 @@ function GbpFaqs() {
 
       <div className="space-y-4">
         {faqs.map((faq, index) => (
-          <div key={index} className=" overflow-hidden">
+          <div key={index} className="overflow-hidden">
             {/* Question */}
             <button
               onClick={() => toggleFaq(index)}
@@ -110,6 +110,11 @@ function GbpFaqs() {
             >
               <p className="pb-4">{faq.answer}</p>
             </div>
+
+            {/* Divider line */}
+            {index < faqs.length - 1 && (
+              <hr className="border-t border-black/20 mt-2 mb-2" />
+            )}
           </div>
         ))}
       </div>
