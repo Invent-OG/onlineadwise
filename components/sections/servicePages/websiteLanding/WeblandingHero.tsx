@@ -192,7 +192,7 @@ function WeblandingHero() {
         {/* Background Image */}
         <div
           ref={imageRef}
-          className="absolute inset-0 bg-[url('https://images.pexels.com/photos/221043/pexels-photo-221043.jpeg')] bg-cover bg-center bg-no-repeat opacity-70 "
+          className="absolute  inset-0 bg-[url('https://images.pexels.com/photos/221043/pexels-photo-221043.jpeg')] bg-cover bg-center bg-no-repeat opacity-70 "
         />
         <div className="absolute inset-0">
           <div className="floating-element absolute top-20 left-10 w-24 h-24 bg-black/5 rounded-full blur-xl" />
@@ -492,7 +492,6 @@ function WeblandingHero() {
             ))}
           </div>
         </div>
-
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <div className="animate-bounce">

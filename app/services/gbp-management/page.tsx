@@ -11,14 +11,14 @@ import React from "react";
 function page() {
   return (
     <>
-      <GbpHero />
+      {/* <GbpHero />
       <MarqueeService />
       <GbpSecond />
       <GbpThird />
       <GbpFour />
       <GbpFive />
       <GbpFaqs />
-      <GbpContact />
+      <GbpContact /> */}
     </>
   );
 }
