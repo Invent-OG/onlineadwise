@@ -3,7 +3,7 @@ import React from "react";
 
 const MarqueeText = () => {
   return (
-    <div className="relative w-full overflow-hidden bg-black py-10">
+    <div className="relative w-full overflow-hidden bg-[#171817] py-10">
       <div className="flex whitespace-nowrap animate-marquee">
         {/* First copy */}
         <div className="flex items-center">

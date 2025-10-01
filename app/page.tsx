@@ -27,6 +27,8 @@ import TestVideo from "@/components/sections/TestVideo";
 import ImagesAnimation from "@/components/sections/ImagesAnimation";
 import BlogCard from "@/components/sections/BlogCard";
 import StickyShowcase from "@/components/sections/StickyShowcase";
+import StickyShowCaseTwo from "@/components/sections/StickyShowCaseTwo";
+import StickyShowCaseThree from "@/components/sections/StickyShowCaseThree";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -58,7 +60,9 @@ export default function Home() {
       <PainPoints />
       {/* <Solution /> */}
       <SalonMarketing />
-      {/* <StickyShowcase /> */}
+      {/* <StickyShowcase />
+      <StickyShowCaseTwo />
+      <StickyShowCaseThree /> */}
       <Slider />
       <PackagesSection />
       {/* <ImageText /> */}

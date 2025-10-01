@@ -58,7 +58,7 @@ export default function PainPoints() {
       className="relative w-full min-h-screen overflow-hidden bg-[#171817]"
     >
       {/* Overlay only for desktop (with bg image) */}
-      <div className="hidden md:block absolute inset-0 bg-black/80 pointer-events-none" />
+      <div className="hidden md:block absolute inset-0 bg-[#171817] pointer-events-none" />
 
       {/* Desktop Layout */}
       <div className="hidden md:block w-full h-screen relative">

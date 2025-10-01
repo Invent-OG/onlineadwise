@@ -1,101 +1,229 @@
+// "use client";
+
+// import React, { useEffect, useRef } from "react";
+// import { packages } from "@/lib/data/servicespackages";
+// import { ShieldCheck, Rocket, Crown, Check } from "lucide-react";
+// import gsap from "gsap";
+
+// export default function PackagesSection() {
+//   const icons = [ShieldCheck, Rocket, Crown];
+//   const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+//   useEffect(() => {
+//     iconRefs.current.forEach((icon, index) => {
+//       if (!icon) return;
+//       const card = icon.closest(".package-card");
+//       if (card) {
+//         card.addEventListener("mouseenter", () => {
+//           gsap.to(icon, {
+//             scale: 1.3,
+//             y: -10,
+//             duration: 0.4,
+//             ease: "power2.out",
+//           });
+//           gsap.to(card, {
+//             backgroundColor: "#1f1f1f",
+//             y: -5,
+//             boxShadow: "0 10px 25px rgba(255,215,0,0.2)",
+//             duration: 0.4,
+//             ease: "power2.out",
+//           });
+//         });
+//         card.addEventListener("mouseleave", () => {
+//           gsap.to(icon, {
+//             scale: 1,
+//             y: 0,
+//             duration: 0.4,
+//             ease: "power3.out",
+//           });
+//           gsap.to(card, {
+//             backgroundColor: "#111111",
+//             y: 0,
+//             boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
+//             duration: 0.4,
+//             ease: "power3.out",
+//           });
+//         });
+//       }
+//     });
+//   }, []);
+
+//   return (
+//     <section className="w-full bg-[#171817] py-24 px-6">
+//       <div className="max-w-6xl mx-auto text-center">
+//         {/* Heading */}
+//         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+//           Your Growth Journey
+//         </h2>
+//         <p className="text-gray-400 text-lg mb-20">
+//           Start small and scale big — upgrade your package as your business
+//           grows.
+//         </p>
+
+//         {/* Cards */}
+//         <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+//           {packages.map((pkg, index) => {
+//             const Icon = icons[index % icons.length];
+
+//             return (
+//               <div
+//                 key={index}
+//                 className="package-card flex-1 flex flex-col items-center bg-[#111111] border border-gray-800 rounded-sm shadow-lg p-8 w-[320px] h-[520px] text-left transition-all duration-300"
+//               >
+//                 {/* Circle Icon */}
+//                 <div
+//                   ref={(el) => (iconRefs.current[index] = el)}
+//                   className="flex items-center justify-center w-16 h-16 rounded-full bg-yellow-500 text-black shadow-lg mb-6"
+//                 >
+//                   <Icon className="w-8 h-8" />
+//                 </div>
+
+//                 {/* Card Content */}
+//                 <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+//                   {pkg.title}
+//                 </h3>
+//                 <ul className="space-y-3 flex-1">
+//                   {pkg.items.map((item, i) => (
+//                     <li
+//                       key={i}
+//                       className="flex items-start gap-2 text-gray-300"
+//                     >
+//                       <Check className="w-5 h-5 text-yellow-400 mt-0.5" />
+//                       <span>{item}</span>
+//                     </li>
+//                   ))}
+//                 </ul>
+
+//                 {/* Button */}
+//                 <button className="mt-6 w-full bg-yellow-500 text-black font-semibold py-2 px-4 rounded hover:bg-yellow-400 transition">
+//                   Choose Plan
+//                 </button>
+//               </div>
+//             );
+//           })}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 "use client";
 
 import React, { useEffect, useRef } from "react";
 import { packages } from "@/lib/data/servicespackages";
-import { ShieldCheck, Rocket, Crown, Check } from "lucide-react";
+import { ShieldCheck, Rocket, Crown, Check, Star, Zap } from "lucide-react";
 import gsap from "gsap";
 
 export default function PackagesSection() {
   const icons = [ShieldCheck, Rocket, Crown];
-  const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    iconRefs.current.forEach((icon, index) => {
-      if (!icon) return;
-      const card = icon.closest(".package-card");
-      if (card) {
-        card.addEventListener("mouseenter", () => {
-          gsap.to(icon, {
-            scale: 1.3,
-            y: -10,
-            duration: 0.4,
-            ease: "power2.out",
-          });
-          gsap.to(card, {
-            backgroundColor: "#1f1f1f",
-            y: -5,
-            boxShadow: "0 10px 25px rgba(255,215,0,0.2)",
-            duration: 0.4,
-            ease: "power2.out",
-          });
+    cardRefs.current.forEach((card, index) => {
+      if (!card) return;
+
+      const icon = card.querySelector(".package-icon");
+
+      card.addEventListener("mouseenter", () => {
+        gsap.to(icon, {
+          scale: 1.1,
+          duration: 0.3,
+          ease: "power2.out",
         });
-        card.addEventListener("mouseleave", () => {
-          gsap.to(icon, {
-            scale: 1,
-            y: 0,
-            duration: 0.4,
-            ease: "power3.out",
-          });
-          gsap.to(card, {
-            backgroundColor: "#111111",
-            y: 0,
-            boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
-            duration: 0.4,
-            ease: "power3.out",
-          });
+        gsap.to(card, {
+          y: -5,
+          duration: 0.3,
+          ease: "power2.out",
         });
-      }
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(icon, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+        gsap.to(card, {
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
     });
   }, []);
 
   return (
-    <section className="w-full bg-[#171817] py-24 px-6">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+    <section className="w-full bg-white py-24 px-6 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto text-center relative z-10">
+        {/* Heading with badge */}
+        <div className="inline-flex items-center gap-2 bg-yellow-100 border border-yellow-200 rounded-full px-4 py-2 mb-4">
+          <Zap className="w-4 h-4 text-yellow-600" />
+          <span className="text-yellow-700 text-sm font-semibold">
+            GROWTH PLANS
+          </span>
+        </div>
+
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Your Growth Journey
         </h2>
-        <p className="text-gray-400 text-lg mb-20">
+        <p className="text-gray-600 text-lg mb-20">
           Start small and scale big — upgrade your package as your business
           grows.
         </p>
 
         {/* Cards */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
           {packages.map((pkg, index) => {
             const Icon = icons[index % icons.length];
+            const isPopular = index === 1;
 
             return (
               <div
                 key={index}
-                className="package-card flex-1 flex flex-col items-center bg-[#111111] border border-gray-800 rounded-sm shadow-lg p-8 w-[320px] h-[520px] text-left transition-all duration-300"
+                ref={(el) => (cardRefs.current[index] = el)}
+                className={`package-card flex-1 flex flex-col items-center bg-white border rounded-2xl shadow-sm p-8 w-[320px] h-[520px] text-left transition-all duration-300 hover:shadow-lg
+                  ${isPopular ? "border-yellow-400 ring-2 ring-yellow-200 ring-opacity-50" : "border-gray-200"}`}
               >
-                {/* Circle Icon */}
-                <div
-                  ref={(el) => (iconRefs.current[index] = el)}
-                  className="flex items-center justify-center w-16 h-16 rounded-full bg-yellow-500 text-black shadow-lg mb-6"
-                >
+                {/* Popular badge for middle card */}
+                {isPopular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                      RECOMMENDED
+                    </div>
+                  </div>
+                )}
+
+                {/* Icon */}
+                <div className="package-icon flex items-center justify-center w-16 h-16 rounded-full bg-yellow-100 text-yellow-600 mb-6 transition-all duration-300">
                   <Icon className="w-8 h-8" />
                 </div>
 
-                {/* Card Content */}
-                <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {pkg.title}
                 </h3>
+
+                {/* Features List */}
                 <ul className="space-y-3 flex-1">
                   {pkg.items.map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 text-gray-300"
+                      className="flex items-start gap-2 text-gray-700"
                     >
-                      <Check className="w-5 h-5 text-yellow-400 mt-0.5" />
-                      <span>{item}</span>
+                      <Check className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Button */}
-                <button className="mt-6 w-full bg-yellow-500 text-black font-semibold py-2 px-4 rounded hover:bg-yellow-400 transition">
+                <button
+                  className={`mt-6 w-full font-semibold py-3 px-4 rounded-lg transition-all duration-300
+                  ${
+                    isPopular
+                      ? "bg-yellow-500 text-white hover:bg-yellow-600 hover:shadow-lg"
+                      : "bg-yellow-100 text-yellow-700 hover:bg-yellow-200"
+                  }`}
+                >
                   Choose Plan
                 </button>
               </div>
