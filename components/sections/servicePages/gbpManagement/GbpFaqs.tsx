@@ -1,41 +1,41 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { gsap } from "gsap";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, Star } from "lucide-react"; // Star icon as example
 
 const faqs = [
   {
-    question: "1.Why are Google Business Profiles important?",
+    question: "Why are Google Business Profiles important?",
     answer:
       "Google Business Profiles (GBP) help your business appear prominently in local search results and on Google Maps, making it easier for potential customers to find you. They provide essential information like your address, hours, contact details, and customer reviews—all in one place. A well-optimized GBP increases your visibility, builds trust, and drives more foot traffic and sales.",
   },
   {
-    question: "2.How can GBP optimization improve my local SEO?",
+    question: "How can GBP optimization improve my local SEO?",
     answer:
       "Optimizing your GBP helps your business show up higher in local map packs and search results. This means more visibility, more clicks, and ultimately more customers for your business.",
   },
   {
-    question: "3.What information should I include in my GBP?",
+    question: "What information should I include in my GBP?",
     answer:
       "Your GBP should always include accurate business name, address, phone number (NAP), hours of operation, website, categories, services, and high-quality images to build credibility.",
   },
   {
-    question: "4.Do customer reviews really matter?",
+    question: "Do customer reviews really matter?",
     answer:
       "Yes, reviews are one of the strongest ranking factors in GBP. Positive reviews improve trust and influence customer decisions. Responding to both positive and negative reviews shows professionalism.",
   },
   {
-    question: "5.Can I post updates on my GBP?",
+    question: "Can I post updates on my GBP?",
     answer:
       "Absolutely. GBP allows you to post updates, promotions, and events directly on your profile. Regular updates keep your business active and help engage your audience.",
   },
   {
-    question: "6.What are local citations and why are they important?",
+    question: "What are local citations and why are they important?",
     answer:
       "Local citations are mentions of your business (name, address, phone) across directories and websites. Consistent citations strengthen local SEO and help verify your business information to Google.",
   },
   {
-    question: "7.How do GBP insights help my business?",
+    question: "How do GBP insights help my business?",
     answer:
       "GBP insights show you how customers find your business, what actions they take (calls, visits, clicks), and what keywords they use. These analytics help refine your local marketing strategy.",
   },
@@ -82,38 +82,48 @@ function GbpFaqs() {
   };
 
   return (
-    <section className="relative bg-[#FBD256] mx-auto px-6 py-16 md:py-24">
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-black">
+    <section className="relative bg-black mx-auto px-6 py-16 md:py-24 overflow-x-hidden">
+      <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-white">
         GBP Management FAQs
       </h2>
 
-      <div className="space-y-4">
+      <div className="space-y-4 max-w-5xl mx-auto">
         {faqs.map((faq, index) => (
-          <div key={index} className="overflow-hidden">
+          <div key={index} className="overflow-hidden flex flex-col">
             {/* Question */}
             <button
               onClick={() => toggleFaq(index)}
-              className="w-full flex justify-between items-center p-4 md:p-6 text-left font-medium text-lg md:text-xl text-black"
+              className="w-full flex justify-between items-center p-4 md:p-6 text-left font-medium text-lg md:text-xl text-white group"
             >
-              {faq.question}
-              {openIndex === index ? (
-                <Minus className="w-6 h-6 text-black" />
-              ) : (
-                <Plus className="w-6 h-6 text-black" />
-              )}
+              <div className="flex items-center space-x-3">
+                {/* Left side icon */}
+                <div className="text-yellow-500 w-8 h-8 flex items-center justify-center">
+                  <Star className="w-5 h-5" />
+                </div>
+                <span>{faq.question}</span>
+              </div>
+
+              {/* Right side plus/minus */}
+              <div className="w-8 h-8 flex items-center justify-center bg-yellow-500 rounded-full text-black transition-transform duration-300 group-hover:scale-110">
+                {openIndex === index ? (
+                  <Minus className="w-4 h-4" />
+                ) : (
+                  <Plus className="w-4 h-4" />
+                )}
+              </div>
             </button>
 
-            {/* Answer (animated container) */}
+            {/* Answer (animated container with left border) */}
             <div
               ref={(el) => (answerRefs.current[index] = el)}
-              className="h-0 opacity-0 overflow-hidden px-4 md:px-6 text-gray-600 text-base md:text-lg leading-relaxed"
+              className="h-0 opacity-0 overflow-hidden px-4 md:px-6 text-gray-400 text-base md:text-lg leading-relaxed border-l-4 border-yellow-500"
             >
               <p className="pb-4">{faq.answer}</p>
             </div>
 
             {/* Divider line */}
             {index < faqs.length - 1 && (
-              <hr className="border-t border-black/20 mt-2 mb-2" />
+              <hr className="border-t border-white/20 mt-2 mb-2" />
             )}
           </div>
         ))}

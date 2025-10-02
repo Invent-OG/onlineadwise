@@ -29,7 +29,7 @@ import BlogCard from "@/components/sections/BlogCard";
 import StickyShowcase from "@/components/sections/StickyShowcase";
 import StickyShowCaseTwo from "@/components/sections/StickyShowCaseTwo";
 import StickyShowCaseThree from "@/components/sections/StickyShowCaseThree";
-
+import TestimonialHome from "@/components/sections/TestimonialHome";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -78,6 +78,7 @@ export default function Home() {
       <FAQ />
       <ContactForm />
       <BlogCard />
+      <TestimonialHome />
       <CTA />
     </div>
   );

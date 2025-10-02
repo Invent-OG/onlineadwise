@@ -1,446 +1,533 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
-type TabKey = "visibility" | "reviews" | "engagement" | "calls";
-
-const colorClasses = {
-  blue: {
-    gradient: "from-blue-500 to-cyan-500",
-    light: "blue-400",
-    dark: "blue-600",
-  },
-  green: {
-    gradient: "from-green-500 to-emerald-500",
-    light: "green-400",
-    dark: "green-600",
-  },
-  purple: {
-    gradient: "from-purple-500 to-pink-500",
-    light: "purple-400",
-    dark: "purple-600",
-  },
-  orange: {
-    gradient: "from-orange-500 to-red-500",
-    light: "orange-400",
-    dark: "orange-600",
-  },
-};
-
-type TabStats = {
-  value: number;
-  label: string;
-  suffix: string;
-};
+type TabKey = "lsa" | "visibility" | "reviews" | "calls";
 
 type TabInfo = {
   title: string;
-  content: string[];
-  stats: TabStats[];
-  color: keyof typeof colorClasses;
+  heading: string;
+  content: string;
+  button: string;
+  bgImage: string;
 };
 
 function GbpThird() {
-  const [activeTab, setActiveTab] = useState<TabKey>("visibility");
-  const [isMobile, setIsMobile] = useState(false);
-  const sectionRef = useRef(null);
-  const tabsContainerRef = useRef(null);
-  const contentContainerRef = useRef(null);
-  const headingRef = useRef(null);
-  const subheadingRef = useRef(null);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  const [activeTab, setActiveTab] = useState<TabKey>("lsa");
+  const sectionRefs = useRef<Record<TabKey, HTMLDivElement | null>>({
+    lsa: null,
+    visibility: null,
+    reviews: null,
+    calls: null,
+  });
 
   const tabData: Record<TabKey, TabInfo> = {
+    lsa: {
+      title: "Traffic Growth",
+      heading: "Traffic Growth",
+      content: `The main goal of Google Business Profile (GBP) management for law firms is to increase high-quality leads and signed cases from local searches. By optimizing your profile, your firm can appear in the Google Local Pack (map results) and top organic listings, exposing your brand to potential clients in your area.
+
+Key Benefits:
+- Appear in top local search results and Google Maps.
+- Increase profile views and website clicks.
+- Attract potential clients actively searching for legal services.
+
+A strong GBP strategy ensures your law firm captures attention, drives more calls, and generates measurable ROI.`,
+      button: "Contact Us",
+      bgImage:
+        "https://niftymarketing.com/wp-content/uploads/2023/12/organic-growth-cases.webp",
+    },
     visibility: {
-      title: "LOCAL VISIBILITY",
-      content: [
-        "Optimize your Google Business Profile to ensure your business shows up in local search results and Google Maps.",
-        "We focus on proper categorization, accurate contact details, and geo-targeted optimization to maximize visibility for your business.",
-      ],
-      stats: [
-        { value: 87, label: "Increase in map views", suffix: "%" },
-        { value: 74, label: "Higher local search ranking", suffix: "%" },
-        { value: 52, label: "More profile impressions", suffix: "%" },
-      ],
-      color: "blue",
+      title: "Link Building",
+      heading: "Link Building",
+      content: `Link building is one of the most important factors for local SEO success. Our SEO tools analyze your backlink profile, identify opportunities, and acquire high-quality links from authoritative websites to strengthen your domain authority.
+
+Key Benefits:
+- Improve search rankings for competitive keywords.
+- Build credibility and trust with search engines.
+- Enhance online visibility beyond your local market.
+
+High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
+      button: "Get Started",
+      bgImage:
+        "https://niftymarketing.com/wp-content/uploads/2023/12/bl-cases-bg.webp",
     },
     reviews: {
-      title: "REVIEW MANAGEMENT",
-      content: [
-        "Encourage, monitor, and respond to customer reviews to boost your reputation and improve rankings.",
-        "Our GBP management service ensures positive reviews are highlighted and negative feedback is handled professionally.",
-      ],
-      stats: [
-        { value: 320, label: "Reviews generated", suffix: "+" },
-        { value: 91, label: "Average rating improvement", suffix: "%" },
-        { value: 85, label: "Engagement with reviews", suffix: "%" },
-      ],
-      color: "green",
-    },
-    engagement: {
-      title: "POSTS & UPDATES",
-      content: [
-        "Regular GBP posts keep your profile active and engaging. Share offers, events, and updates to attract potential customers.",
-        "We manage content creation and posting to keep your profile relevant and engaging for users and search engines.",
-      ],
-      stats: [
-        { value: 120, label: "Posts created", suffix: "+" },
-        { value: 68, label: "Increased clicks", suffix: "%" },
-        { value: 73, label: "User interactions", suffix: "%" },
-      ],
-      color: "purple",
+      title: "Lead Attribution",
+      heading: "Lead Attribution & Tracking",
+      content: `Data-driven marketing is essential for law firms. We implement call tracking, lead attribution, and analytics so you know exactly which campaigns are generating real results. This allows your firm to focus on marketing strategies that produce measurable outcomes.
+
+Key Benefits:
+- Track calls, messages, and website leads effectively.
+- Identify which marketing efforts drive signed cases.
+- Optimize campaigns based on actionable insights.
+
+Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
+      button: "See How",
+      bgImage:
+        "https://niftymarketing.com/wp-content/uploads/2023/12/leads-cases-bg.webp",
     },
     calls: {
-      title: "PHONE CALLS",
-      content: [
-        "GBP optimization drives high-intent local customers to call your business directly.",
-        "Track and improve call conversions by ensuring your profile information and call-to-actions are optimized.",
-      ],
-      stats: [
-        { value: 210, label: "More calls per month", suffix: "%" },
-        { value: 95, label: "Call conversion increase", suffix: "%" },
-        { value: 60, label: "Customers contacted", suffix: "%" },
-      ],
-      color: "orange",
+      title: "Calls From Local Searchers",
+      heading: "Convert Local Searches into Client Calls",
+      content: `Potential clients often rely on Google reviews, photos, and profile details to choose a law firm. A well-optimized GBP profile ensures your firm appears at the top and builds trust before clients even call.
+
+Key Benefits:
+- Increase incoming calls from local prospects.
+- Strengthen client trust with accurate information and reviews.
+- Highlight your services with photos, posts, and updates.
+
+With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
+      button: "Talk to Us",
+      bgImage:
+        "https://niftymarketing.com/wp-content/uploads/2023/12/organic-growth-cases.webp",
     },
   };
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from([headingRef.current, subheadingRef.current], {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 80%",
-        },
-      });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries.find((entry) => entry.isIntersecting);
+        if (visibleEntry?.target) {
+          const key = (visibleEntry.target as HTMLElement).dataset
+            .tab as TabKey;
+          setActiveTab(key);
+        }
+      },
+      { threshold: 0.5 }
+    );
 
-      if (!isMobile) {
-        gsap.from(tabsContainerRef.current, {
-          x: 100,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: tabsContainerRef.current,
-            start: "top 80%",
-          },
-        });
-        gsap.from(contentContainerRef.current, {
-          x: -100,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: contentContainerRef.current,
-            start: "top 80%",
-          },
-        });
-        const tabs = ["visibility", "reviews", "engagement", "calls"];
-        tabs.forEach((tab) => {
-          ScrollTrigger.create({
-            trigger: `.tab-trigger-${tab}`,
-            start: "top center",
-            end: "bottom center",
-            onEnter: () => setActiveTab(tab as TabKey),
-            onEnterBack: () => setActiveTab(tab as TabKey),
-          });
-        });
-      }
-    }, sectionRef);
-    return () => ctx.revert();
-  }, [isMobile]);
+    Object.values(sectionRefs.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
 
-  const currentData = tabData[activeTab];
-  const colors = colorClasses[currentData.color];
+    return () => observer.disconnect();
+  }, []);
 
-  const MobileTabs = () => (
-    <div className="lg:hidden mb-8">
-      <div className="bg-white rounded-2xl p-4 shadow-xl border border-gray-200">
-        <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">
-          GBP Metrics
-        </h3>
-        <div className="grid grid-cols-2 gap-3">
-          {Object.entries(tabData).map(([tabKey, tab]) => {
-            const isActive = activeTab === tabKey;
-            return (
-              <button
-                key={tabKey}
-                onClick={() => setActiveTab(tabKey as TabKey)}
-                className={`p-3 rounded-xl text-center transition-all duration-300 ${
-                  isActive
-                    ? "bg-yellow-500 text-white shadow-lg border-2 border-yellow-400"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200 border-2 border-transparent"
-                }`}
-              >
-                <div className="font-semibold text-xs mb-1">
-                  {tab.title.split(" ")[0]}
-                </div>
-                <div className="text-xs opacity-80">
-                  {tab.stats[0].value}
-                  {tab.stats[0].suffix}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-        <div className="mt-4 p-3 bg-gray-50 rounded-xl border border-gray-200 text-center">
-          <div className="text-sm font-semibold text-gray-600">Active:</div>
-          <div className="text-yellow-600 font-bold">{currentData.title}</div>
-        </div>
-      </div>
-    </div>
-  );
+  const handleTabClick = (key: TabKey) => {
+    sectionRefs.current[key]?.scrollIntoView({ behavior: "smooth" });
+    setActiveTab(key);
+  };
 
   return (
-    <div ref={sectionRef} className="min-h-screen bg-white py-20 px-4">
-      <div className="bg-yellow-500 text-black px-6 py-2 rounded-full text-sm font-semibold tracking-wider uppercase mb-6 text-center w-max mx-auto">
-        GBP MANAGEMENT
+    <div className="w-full bg-black">
+      {/* Main Heading */}
+      <div className="text-center py-12 px-4">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          LET&apos;S GET MORE OF THE
+          <br />
+          CASES YOU WANT
+        </h1>
       </div>
 
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1
-            ref={headingRef}
-            className="text-4xl md:text-4xl font-bold text-black mb-4"
+      {/* Mobile Tabs */}
+      <div className="lg:hidden flex justify-between items-center overflow-x-auto bg-gray-900 py-3 px-2 space-x-2 sticky top-0 z-20 shadow-md">
+        {(Object.entries(tabData) as [TabKey, TabInfo][]).map(([key, tab]) => (
+          <button
+            key={key}
+            onClick={() => handleTabClick(key)}
+            className={`flex-shrink-0 px-4 py-2 font-semibold rounded-lg transition-all duration-300 whitespace-nowrap ${
+              activeTab === key
+                ? "bg-yellow-500 text-black scale-105 shadow-lg"
+                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+            }`}
           >
-            Google Business Profile Optimization
-          </h1>
-          <p
-            ref={subheadingRef}
-            className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto"
-          >
-            Drive more local customers, improve your online reputation, and
-            increase calls with GBP management strategies tailored for your
-            business.
-          </p>
+            {tab.title}
+          </button>
+        ))}
+      </div>
+
+      <div className="flex flex-col lg:flex-row">
+        {/* Left Content Sections */}
+        <div className="flex-1">
+          {(Object.entries(tabData) as [TabKey, TabInfo][]).map(
+            ([key, tab]) => (
+              <div
+                key={key}
+                ref={(el) => (sectionRefs.current[key] = el)}
+                data-tab={key}
+                className="relative w-full min-h-[100vh] flex items-center justify-start"
+              >
+                {/* Background */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${tab.bgImage})` }}
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/70"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-yellow-500/40 to-transparent pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-black/60 to-transparent pointer-events-none"></div>
+                <div className="absolute left-0 right-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 to-transparent pointer-events-none"></div>
+
+                {/* Content */}
+                <div className="relative z-10 max-w-2xl text-left text-white px-6 lg:px-16">
+                  <h2 className="text-3xl md:text-4xl text-yellow-500 font-bold mb-6">
+                    {tab.heading}
+                  </h2>
+                  <p className="text-lg mb-6 whitespace-pre-line">
+                    {tab.content}
+                  </p>
+                  <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg">
+                    {tab.button}
+                  </button>
+                </div>
+
+                {/* SVG Graphics at bottom of each section */}
+                <div className="absolute bottom-0 left-0 right-0 z-10 w-full hidden md:block">
+                  {key === "lsa" && (
+                    <svg
+                      width="100%"
+                      height="80"
+                      viewBox="0 0 1200 100"
+                      preserveAspectRatio="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <text
+                        x="600"
+                        y="30"
+                        text-anchor="middle"
+                        font-family="Arial, sans-serif"
+                        font-size="16"
+                        font-weight="bold"
+                        fill="#fbbf24"
+                      >
+                        Traffic Growth
+                      </text>
+                      <path
+                        d="M50 70 L200 50 L350 60 L500 30 L650 40 L800 20 L950 35 L1100 25"
+                        stroke="#3b82f6"
+                        stroke-width="3"
+                        fill="none"
+                      />
+                      <circle cx="200" cy="50" r="4" fill="#3b82f6" />
+                      <circle cx="350" cy="60" r="4" fill="#3b82f6" />
+                      <circle cx="500" cy="30" r="4" fill="#3b82f6" />
+                      <circle cx="650" cy="40" r="4" fill="#3b82f6" />
+                      <circle cx="800" cy="20" r="4" fill="#3b82f6" />
+                      <circle cx="950" cy="35" r="4" fill="#3b82f6" />
+                      <circle cx="1100" cy="25" r="4" fill="#3b82f6" />
+                    </svg>
+                  )}
+                  {key === "visibility" && (
+                    <div className="absolute bottom-40 right-20 z-10">
+                      <svg
+                        width="450"
+                        height="350"
+                        viewBox="0 0 400 300"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <text
+                          x="200"
+                          y="20"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="20"
+                          font-weight="bold"
+                          fill="#fbbf24"
+                        >
+                          Link Building
+                        </text>
+                        <circle
+                          cx="200"
+                          cy="150"
+                          r="60"
+                          fill="#10b981"
+                          opacity="0.3"
+                          stroke="#10b981"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="200"
+                          cy="150"
+                          r="40"
+                          fill="#10b981"
+                          opacity="0.5"
+                          stroke="#10b981"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="200"
+                          cy="150"
+                          r="20"
+                          fill="#10b981"
+                          opacity="0.7"
+                          stroke="#10b981"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="140"
+                          y1="150"
+                          x2="80"
+                          y2="120"
+                          stroke="#f59e0b"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="260"
+                          y1="150"
+                          x2="320"
+                          y2="120"
+                          stroke="#f59e0b"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="200"
+                          y1="90"
+                          x2="200"
+                          y2="50"
+                          stroke="#f59e0b"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="200"
+                          y1="210"
+                          x2="200"
+                          y2="250"
+                          stroke="#f59e0b"
+                          stroke-width="2"
+                        />
+                        <circle cx="80" cy="120" r="15" fill="#f59e0b" />
+                        <circle cx="320" cy="120" r="15" fill="#f59e0b" />
+                        <circle cx="200" cy="50" r="15" fill="#f59e0b" />
+                        <circle cx="200" cy="250" r="15" fill="#f59e0b" />
+                      </svg>
+                    </div>
+                  )}
+                  {key === "reviews" && (
+                    <div className="absolute bottom-0 left-52 right-0 z-10 w-full ">
+                      <svg
+                        width="100%"
+                        height="120"
+                        viewBox="0 0 1200 150"
+                        preserveAspectRatio="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <text
+                          x="600"
+                          y="10"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="16"
+                          font-weight="bold"
+                          fill="#fbbf24"
+                        >
+                          Lead Attribution
+                        </text>
+                        <rect
+                          x="200"
+                          y="80"
+                          width="80"
+                          height="40"
+                          fill="#3b82f6"
+                        />
+                        <rect
+                          x="400"
+                          y="60"
+                          width="80"
+                          height="60"
+                          fill="#10b981"
+                        />
+                        <rect
+                          x="600"
+                          y="40"
+                          width="80"
+                          height="80"
+                          fill="#f59e0b"
+                        />
+                        <rect
+                          x="800"
+                          y="50"
+                          width="80"
+                          height="70"
+                          fill="#ef4444"
+                        />
+                        <text
+                          x="240"
+                          y="130"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="#d1d5db"
+                        >
+                          SEO
+                        </text>
+                        <text
+                          x="440"
+                          y="130"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="#d1d5db"
+                        >
+                          PPC
+                        </text>
+                        <text
+                          x="640"
+                          y="130"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="#d1d5db"
+                        >
+                          Social
+                        </text>
+                        <text
+                          x="840"
+                          y="130"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="#d1d5db"
+                        >
+                          Email
+                        </text>
+                        <text
+                          x="240"
+                          y="70"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="white"
+                        >
+                          50
+                        </text>
+                        <text
+                          x="440"
+                          y="50"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="white"
+                        >
+                          80
+                        </text>
+                        <text
+                          x="640"
+                          y="30"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="white"
+                        >
+                          100
+                        </text>
+                        <text
+                          x="840"
+                          y="40"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="white"
+                        >
+                          70
+                        </text>
+                      </svg>
+                    </div>
+                  )}
+                  {key === "calls" && (
+                    <div className="absolute bottom-40 right-20 z-10">
+                      <svg
+                        width="450"
+                        height="350"
+                        viewBox="0 0 400 300"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <text
+                          x="200"
+                          y="40"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="16"
+                          font-weight="bold"
+                          fill="#fbbf24"
+                        >
+                          Phone Calls
+                        </text>
+                        <path
+                          d="M120 120 C140 80 260 80 280 120 L280 180 C260 220 140 220 120 180 Z"
+                          fill="#3b82f6"
+                          opacity="0.3"
+                          stroke="#3b82f6"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="170"
+                          y="140"
+                          width="60"
+                          height="80"
+                          fill="#10b981"
+                          opacity="0.3"
+                          stroke="#10b981"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="200"
+                          cy="100"
+                          r="30"
+                          fill="#f59e0b"
+                          opacity="0.3"
+                          stroke="#f59e0b"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M180 90 L220 90 M200 70 L200 110"
+                          stroke="#f59e0b"
+                          stroke-width="3"
+                        />
+                        <text
+                          x="200"
+                          y="250"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="#d1d5db"
+                        >
+                          +45% Calls
+                        </text>
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )
+          )}
         </div>
 
-        {/* Mobile Tabs */}
-        <MobileTabs />
+        {/* Redesigned Desktop Sticky Tabs */}
+        {/* Desktop Sticky Tabs - Modern Card Stack Style */}
+        <div
+          className="hidden lg:flex w-[300px] sticky top-0 h-screen flex-col items-center justify-center relative"
+          style={{
+            backgroundImage: `url(${tabData[activeTab].bgImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {/* Dark Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80"></div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div ref={contentContainerRef} className="space-y-12">
-            {!isMobile &&
-              Object.entries(tabData).map(([tabKey, tab]) => (
-                <div
-                  key={tabKey}
-                  className={`tab-trigger-${tabKey} bg-white backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 ${
-                    activeTab === tabKey
-                      ? "opacity-100 transform translate-y-0"
-                      : "opacity-30 transform translate-y-4"
-                  }`}
-                >
-                  <h2 className="text-xl font-bold text-black mb-6">
-                    {tab.title}
-                  </h2>
-                  <div className="space-y-4 mb-8">
-                    {tab.content.map((paragraph, index) => (
-                      <p
-                        key={index}
-                        className="text-lg text-black leading-relaxed"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
+          {/* Tab Cards Stack */}
+          <div className="relative z-10 flex flex-col space-y-6 px-4 w-full">
+            {(Object.entries(tabData) as [TabKey, TabInfo][]).map(
+              ([key, tab]) => {
+                const isActive = activeTab === key;
+                return (
+                  <div
+                    key={key}
+                    onClick={() => handleTabClick(key)}
+                    className={`cursor-pointer rounded-xl p-4 text-left transition-all duration-300 transform w-full ${
+                      isActive
+                        ? "bg-yellow-500/90 text-black shadow-2xl scale-105 border-l-4 border-yellow-400"
+                        : "bg-white/10 text-white hover:bg-yellow-500/30 hover:text-black hover:scale-105 shadow-md"
+                    }`}
+                  >
+                    <h3 className="font-bold text-lg">{tab.title}</h3>
+                    {isActive && (
+                      <p className="mt-1 text-sm opacity-90">{tab.heading}</p>
+                    )}
                   </div>
-                  <button className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold py-3 px-6 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
-                    LEARN MORE
-                  </button>
-                  <div className="grid grid-cols-1 gap-4 mt-8">
-                    {tab.stats.map((stat, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between p-4 bg-gray-300/50 rounded-lg"
-                      >
-                        <div className="text-2xl font-bold text-gray-800">
-                          {stat.value}
-                          {stat.suffix}
-                        </div>
-                        <div className="text-gray-800 text-right">
-                          {stat.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-
-            {isMobile && (
-              <div className="bg-white backdrop-blur-sm rounded-2xl p-6 transition-all duration-500">
-                <h2 className="text-2xl font-bold text-black mb-6">
-                  {currentData.title}
-                </h2>
-                <div className="space-y-4 mb-6">
-                  {currentData.content.map((paragraph, index) => (
-                    <p
-                      key={index}
-                      className="text-base text-black leading-relaxed"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-                <button className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold py-3 px-6 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
-                  LEARN MORE
-                </button>
-                <div className="grid grid-cols-1 gap-3 mt-6">
-                  {currentData.stats.map((stat, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between p-3 bg-gray-300/50 rounded-lg"
-                    >
-                      <div className="text-xl font-bold text-gray-800">
-                        {stat.value}
-                        {stat.suffix}
-                      </div>
-                      <div className="text-gray-800 text-right text-sm">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                );
+              }
             )}
-          </div>
-
-          <div ref={tabsContainerRef} className="hidden lg:block sticky top-8">
-            <div className="bg-white rounded-2xl p-6 shadow-2xl border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">
-                GBP Metrics
-              </h3>
-              <div className="space-y-3">
-                {Object.entries(tabData).map(([tabKey, tab]) => {
-                  const isActive = activeTab === tabKey;
-                  return (
-                    <button
-                      key={tabKey}
-                      onClick={() => setActiveTab(tabKey as TabKey)}
-                      className={`w-full p-4 rounded-xl text-left transition-all duration-300 transform hover:scale-102 ${
-                        isActive
-                          ? "bg-yellow-500 text-white shadow-lg border-2 border-yellow-400"
-                          : "bg-gray-100 text-gray-700 hover:bg-gray-200 border-2 border-transparent"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span
-                          className={`font-semibold text-sm ${isActive ? "text-white" : "text-gray-800"}`}
-                        >
-                          {tab.title.split(" ")[0]}
-                        </span>
-                        {isActive && (
-                          <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                            <svg
-                              className="w-3 h-3 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={3}
-                                d="M5 13l4 4L19 7"
-                              />
-                            </svg>
-                          </div>
-                        )}
-                      </div>
-                      <div className="mt-2 h-1 bg-black/10 rounded-full overflow-hidden">
-                        <div
-                          className={`h-full rounded-full transition-all duration-1000 ${isActive ? "w-full bg-white/60" : "w-0"}`}
-                        />
-                      </div>
-                      <div className="mt-2 flex justify-between text-xs">
-                        {tab.stats.slice(0, 1).map((stat, index) => (
-                          <span
-                            key={index}
-                            className={
-                              isActive ? "text-white/90" : "text-gray-600"
-                            }
-                          >
-                            {stat.value}
-                            {stat.suffix} {stat.label.split(" ")[0]}
-                          </span>
-                        ))}
-                        <span
-                          className={
-                            isActive ? "text-white/70" : "text-gray-500"
-                          }
-                        >
-                          {tab.stats.length} metrics
-                        </span>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
-                <h4 className="font-bold text-gray-800 mb-2 text-sm">
-                  Currently Viewing:
-                </h4>
-                <div className="text-yellow-600 font-semibold text-lg">
-                  {currentData.title}
-                </div>
-                <p className="text-gray-600 text-xs mt-1">
-                  {currentData.content[0].split(".").slice(0, 2).join(".")}...
-                </p>
-              </div>
-
-              <div className="mt-4 bg-white rounded-2xl p-6 shadow-xl border border-gray-200">
-                <h4 className="font-bold text-gray-800 mb-3 text-sm">
-                  Why This Matters:
-                </h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center text-gray-700 text-sm">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                    Increase local customer acquisition
-                  </li>
-                  <li className="flex items-center text-gray-700 text-sm">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                    Boost online reputation and reviews
-                  </li>
-                  <li className="flex items-center text-gray-700 text-sm">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                    Track and measure ROI effectively
-                  </li>
-                </ul>
-              </div>
-
-              <div className="mt-4 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl p-6 text-white">
-                <h4 className="font-bold mb-3 text-sm">Performance Summary</h4>
-                <div className="grid grid-cols-2 gap-3">
-                  {currentData.stats.slice(0, 2).map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-xl font-bold">
-                        {stat.value}
-                        {stat.suffix}
-                      </div>
-                      <div className="text-xs opacity-90">
-                        {stat.label.split(" ")[0]}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
