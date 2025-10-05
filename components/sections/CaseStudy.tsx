@@ -213,3 +213,90 @@ export default function CaseStudy() {
     </section>
   );
 }
+// "use client";
+
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const sections = [
+//   {
+//     title: "Myriam",
+//     subtitle: "Marketplace",
+//     img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+//   },
+//   {
+//     title: "Stéphane Molère",
+//     subtitle: "Marketplace",
+//     img: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b",
+//   },
+//   {
+//     title: "Baptiste Charier",
+//     subtitle: "Application",
+//     img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+//   },
+//   {
+//     title: "Melanie",
+//     subtitle: "Application",
+//     img: "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47",
+//   },
+// ];
+
+// export default function OverlapSections() {
+//   const containerRef = useRef<HTMLDivElement>(null);
+
+//   useEffect(() => {
+//     const ctx = gsap.context(() => {
+//       const panels = gsap.utils.toArray<HTMLElement>(".panel");
+
+//       panels.forEach((panel) => {
+//         ScrollTrigger.create({
+//           trigger: panel,
+//           start: "top top",
+//           pin: true,
+//           pinSpacing: false, // overlap effect
+//           end: "+=100%",
+//         });
+//       });
+//     }, containerRef);
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <div ref={containerRef} className="relative w-full">
+//       {sections.map((sec, i) => {
+//         const isEven = i % 2 === 0;
+
+//         return (
+//           <div key={i} className="panel min-h-screen grid grid-cols-2">
+//             {/* Left Side */}
+//             <div
+//               className={`flex flex-col justify-center p-12 min-h-screen ${
+//                 isEven ? "bg-[#171817] text-white" : "bg-white text-[#171817]"
+//               }`}
+//             >
+//               <h2 className="text-2xl font-bold mb-2">{sec.title}</h2>
+//               <p className="uppercase tracking-wide">{sec.subtitle}</p>
+//             </div>
+
+//             {/* Right Side */}
+//             <div
+//               className={`flex items-center justify-center min-h-screen ${
+//                 isEven ? "bg-white text-[#171817]" : "bg-[#171817] text-white"
+//               }`}
+//             >
+//               <img
+//                 src={sec.img}
+//                 alt={sec.title}
+//                 className="w-72 h-72 object-cover shadow-xl"
+//               />
+//             </div>
+//           </div>
+//         );
+//       })}
+//     </div>
+//   );
+// }

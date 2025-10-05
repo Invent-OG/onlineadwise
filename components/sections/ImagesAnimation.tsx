@@ -24,8 +24,12 @@ const generateNonOverlappingTransforms = (items: PhotoStackItem[]) => {
   const positions: { x: number; y: number; r: number }[] = [];
   const displayedItems = items.slice(0, 5);
 
-  const cardWidthVW = 25;
-  const cardHeightVH = 45;
+  // Responsive card dimensions
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const isTablet = typeof window !== "undefined" && window.innerWidth < 1024;
+
+  const cardWidthVW = isMobile ? 35 : isTablet ? 30 : 25;
+  const cardHeightVH = isMobile ? 35 : isTablet ? 40 : 45;
   const maxRetries = 100;
 
   displayedItems.forEach(() => {
@@ -35,9 +39,9 @@ const generateNonOverlappingTransforms = (items: PhotoStackItem[]) => {
 
     do {
       collision = false;
-      const x = random(-45, 45); // vw
-      const y = random(-25, 25); // vh
-      const r = random(-25, 25); // deg
+      const x = random(isMobile ? -30 : -45, isMobile ? 30 : 45);
+      const y = random(isMobile ? -20 : -25, isMobile ? 20 : 25);
+      const r = random(-25, 25);
       newPos = { x, y, r };
 
       for (const pos of positions) {
@@ -61,7 +65,7 @@ const generateNonOverlappingTransforms = (items: PhotoStackItem[]) => {
 
 function ImagesAnimation({
   items,
-  title = "Our Work",
+  title = "",
   className,
 }: ImagesAnimationProps) {
   // If no items passed, use default images
@@ -94,6 +98,22 @@ function ImagesAnimation({
   const [isGroupHovered, setIsGroupHovered] = React.useState(false);
   const [clickedIndex, setClickedIndex] = React.useState<number | null>(null);
   const [spreadTransforms, setSpreadTransforms] = React.useState<string[]>([]);
+  const [windowSize, setWindowSize] = React.useState({
+    width: typeof window !== "undefined" ? window.innerWidth : 1200,
+    height: typeof window !== "undefined" ? window.innerHeight : 800,
+  });
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const displayedItems = finalItems.slice(0, 5);
   const baseRotations = [
@@ -123,19 +143,48 @@ function ImagesAnimation({
     }
   };
 
+  // Responsive card dimensions
+  const getCardDimensions = () => {
+    if (windowSize.width < 640) {
+      return { width: "12rem", height: "16rem" }; // Mobile
+    } else if (windowSize.width < 768) {
+      return { width: "14rem", height: "18rem" }; // Small tablet
+    } else if (windowSize.width < 1024) {
+      return { width: "16rem", height: "20rem" }; // Tablet
+    } else {
+      return { width: "18rem", height: "24rem" }; // Desktop
+    }
+  };
+
+  const cardDimensions = getCardDimensions();
+
   return (
     <div
       className={cn(
-        "flex flex-col bg-[#ffffff] items-center justify-center gap-8 px-4 sm:px-6 lg:px-8",
+        "flex flex-col bg-[#ffffff] items-center justify-center gap-6 sm:gap-8 px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16",
         className
       )}
     >
       <div
-        className="relative min-h-screen sm:h-[28rem] md:min-h-screen w-full"
+        className="relative w-full flex items-center justify-center"
+        style={{
+          minHeight:
+            windowSize.width < 640
+              ? "60vh"
+              : windowSize.width < 768
+                ? "70vh"
+                : "80vh",
+        }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => !clickedIndex && setIsGroupHovered(false)}
       >
-        <div className="relative left-1/2 top-1/2 h-72 w-48 sm:h-80 sm:w-60 md:h-96 md:w-72 -translate-x-1/2 -translate-y-1/2">
+        <div
+          className="relative"
+          style={{
+            width: cardDimensions.width,
+            height: cardDimensions.height,
+          }}
+        >
           {displayedItems.map((item, index) => {
             const isTopCard = index === topCardIndex;
             const numItems = displayedItems.length;
@@ -143,10 +192,20 @@ function ImagesAnimation({
             if (stackPosition < 0) stackPosition += numItems;
             const isClicked = index === clickedIndex;
 
+            // Responsive stack spacing
+            const stackSpacing =
+              windowSize.width < 640 ? 0.3 : windowSize.width < 768 ? 0.4 : 0.5;
+            const stackScale =
+              windowSize.width < 640
+                ? 0.03
+                : windowSize.width < 768
+                  ? 0.04
+                  : 0.05;
+
             const transform = isGroupHovered
               ? spreadTransforms[index]
-              : `translateY(${stackPosition * 0.5}rem) scale(${
-                  1 - stackPosition * 0.05
+              : `translateY(${stackPosition * stackSpacing}rem) scale(${
+                  1 - stackPosition * stackScale
                 })`;
 
             return (
@@ -155,7 +214,6 @@ function ImagesAnimation({
                 onClick={() => handleCardClick(index)}
                 className={cn(
                   "absolute inset-0 cursor-pointer rounded-xl bg-background p-2 shadow-lg transition-all duration-500 ease-in-out",
-                  "h-72 w-48 sm:h-80 sm:w-60 md:h-96 md:w-72",
                   {
                     "rotate-0": isGroupHovered,
                     [baseRotations[stackPosition]]:
@@ -169,10 +227,12 @@ function ImagesAnimation({
                   zIndex: isClicked
                     ? 200
                     : isGroupHovered
-                    ? 100
-                    : isTopCard
-                    ? numItems
-                    : numItems - stackPosition,
+                      ? 100
+                      : isTopCard
+                        ? numItems
+                        : numItems - stackPosition,
+                  width: "100%",
+                  height: "100%",
                 }}
               >
                 <div className="flex h-full w-full flex-col items-center justify-start">
@@ -183,8 +243,8 @@ function ImagesAnimation({
                       className="h-full w-full rounded-md object-cover"
                     />
                   </div>
-                  <div className="flex h-[25%] items-center justify-center">
-                    <p className="font-serif text-lg sm:text-xl italic text-foreground">
+                  <div className="flex h-[25%] items-center justify-center px-2">
+                    <p className="font-serif text-base sm:text-lg lg:text-xl italic text-foreground text-center">
                       {item.name}
                     </p>
                   </div>
@@ -194,9 +254,12 @@ function ImagesAnimation({
           })}
         </div>
       </div>
-      <h3 className="text-center text-black text-xl sm:text-2xl font-bold text-foreground">
-        {title}
-      </h3>
+
+      {title && (
+        <h3 className="text-center text-black text-lg sm:text-xl lg:text-2xl font-bold text-foreground px-4">
+          {title}
+        </h3>
+      )}
     </div>
   );
 }
