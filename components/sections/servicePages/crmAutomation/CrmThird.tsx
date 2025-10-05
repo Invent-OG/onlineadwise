@@ -11,7 +11,7 @@ type TabInfo = {
   bgImage: string;
 };
 
-function WebThird() {
+function CrmThird() {
   const [activeTab, setActiveTab] = useState<TabKey>("lsa");
   const sectionRefs = useRef<Record<TabKey, HTMLDivElement | null>>({
     lsa: null,
@@ -338,4 +338,4 @@ With expert GBP management, your law firm can dominate local search results and 
   );
 }
 
-export default WebThird;
+export default CrmThird;

@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 
-function PaidAdsHero() {
+function CrmAutomationHero() {
   useEffect(() => {
     gsap.fromTo(
       ".hero-text",
@@ -48,4 +48,4 @@ function PaidAdsHero() {
   );
 }
 
-export default PaidAdsHero;
+export default CrmAutomationHero;
