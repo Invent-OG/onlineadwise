@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 
-function AnalyticsHero() {
+function RepHero() {
   useEffect(() => {
     gsap.fromTo(
       ".hero-text",
@@ -48,4 +48,4 @@ function AnalyticsHero() {
   );
 }
 
-export default AnalyticsHero;
+export default RepHero;
