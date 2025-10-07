@@ -59,7 +59,7 @@ const SocialTestimonial = () => {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#171817] py-20 px-6 md:px-16">
+    <section className="relative w-full overflow-hidden bg-[#000000] py-20 px-6 md:px-16">
       <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-16">
         What Our Clients Say
       </h2>

@@ -181,7 +181,7 @@ export default function SocialFour() {
   ];
 
   return (
-    <section className="bg-[#171817] text-white py-10 px-6 md:px-16 lg:px-24">
+    <section className="bg-[#000000] text-white py-10 px-6 md:px-16 lg:px-24">
       {/* Header */}
       <div className="text-center mb-12 max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
@@ -269,10 +269,10 @@ export default function SocialFour() {
         </Link>
       </div>
 
-      <div className="py-6 px-6 bg-[#171817] text-white">
+      <div className="py-6 px-6 bg-[#000000] text-white">
         {" "}
         <div className="max-w-7xl mx-auto space-y-8">
-          <h2 className="text-center font-serif text-3xl sm:text-5xl md:text-2xl">
+          <h2 className="text-center  text-3xl sm:text-5xl md:text-2xl">
             LET US BE YOUR LINK BUILDING PARTNER
           </h2>
 
