@@ -22,62 +22,56 @@ function SupportThird() {
 
   const tabData: Record<TabKey, TabInfo> = {
     lsa: {
-      title: "WEBSITES",
-      heading: "INCREDIBLY BEAUTIFUL WEBSITES",
-      content: `Stand out against your competition by having one of our sleek, well-designed websites. Over the years, we’ve made hundreds of websites for everything from huge full-service law firms to small single practitioner websites. We can do it all because we’ve already done it all. OnlineAdwise isn’t just a company that can make a website for lawyers. We are THE company that makes websites for lawyers.
+      title: "IDENTITY",
+      heading: "CRAFT A MEMORABLE BRAND",
+      content: `Your brand is the first impression your audience gets. We help you define a clear, consistent identity that resonates and leaves a lasting impact. From logos and colors to tone of voice, every element is carefully designed to reflect your business values and personality.
 
 Key Benefits:
-- Appear in top local search results and Google Maps.
-- Increase profile views and website clicks.
-- Attract potential clients actively searching for legal services.`,
-      button: "Contact Us Today",
+- Build a recognizable and consistent visual identity.  
+- Communicate your brand story effectively.  
+- Establish trust and credibility with your audience.`,
+      button: "Create My Brand",
       bgImage:
-        "https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg",
+        "https://images.pexels.com/photos/3184453/pexels-photo-3184453.jpeg",
     },
     visibility: {
-      title: "CONVERSION",
-      heading: "MADE TO CONVERT",
-      content: `We specialize in creating high-performing law firm websites backed by data-driven research. Our landing pages are strategically designed to increase client inquiries—whether through phone calls, contact forms, or live chat. Every element of our design is focused on guiding visitors to take the next step with ease, helping your firm attract and convert more clients with confidence.
+      title: "STRATEGY",
+      heading: "DESIGN STRATEGICALLY FOR IMPACT",
+      content: `Branding is more than visuals — it’s strategy in action. We analyze your market, competitors, and audience to create branding that positions you effectively. Every design choice, message, and campaign is backed by strategy to ensure your brand stands out and connects.
 
 Key Benefits:
-- Seamlessly guide visitors toward taking action.  
-- Turn website traffic into qualified client inquiries.  
-- Maximize return on every marketing dollar.  
-
-High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
-      button: "Start Converting",
+- Align brand visuals and messaging with business goals.  
+- Position your brand effectively against competitors.  
+- Create a cohesive experience across all platforms.`,
+      button: "Plan My Strategy",
       bgImage:
-        "https://images.pexels.com/photos/8250929/pexels-photo-8250929.jpeg",
+        "https://images.pexels.com/photos/3184290/pexels-photo-3184290.jpeg",
     },
     reviews: {
-      title: "SPEED",
-      heading: "BUILT FOR SPEED",
-      content: `Waiting eternities for a website to load is a terrible experience. OnlineAdwise creates websites with as much form and function as you could possibly want without compromising load time. There will always be a little trade-off for next-level web experiences, but OnlineAdwise has found a great balance and makes incredibly fast websites.
+      title: "CONSISTENCY",
+      heading: "KEEP YOUR BRAND UNIFIED",
+      content: `Consistency is key to strong branding. We help maintain your brand’s look, feel, and messaging across all channels — from social media to print, email campaigns, and websites. A unified brand builds recognition, trust, and loyalty over time.
 
 Key Benefits:
-- Deliver instant page loads for a smoother experience.  
-- Keep visitors engaged instead of bouncing away.  
-- Gain a competitive edge with superior performance.  
-
-Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
-      button: "Experience the Speed",
+- Ensure consistent brand messaging across channels.  
+- Strengthen recognition and recall with uniform visuals.  
+- Enhance audience trust and loyalty.`,
+      button: "Maintain Consistency",
       bgImage:
-        "https://images.pexels.com/photos/127077/pexels-photo-127077.png",
+        "https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg",
     },
     calls: {
-      title: "OPTIMIZATION",
-      heading: "OPTIMIZED FOR SEARCH",
-      content: `OnlineAdwise isn’t a web design company that happens to dabble in SEO. We’ve been killing it at local search marketing for other small and large law firms for nearly a decade. When we create a website for your law firm, you can rest assured we follow best practices in coding and development so that your website can perform optimally in Google and other search engines.
+      title: "GROWTH",
+      heading: "TURN BRANDING INTO BUSINESS RESULTS",
+      content: `A strong brand is a growth engine. We help translate your branding efforts into tangible results — increased engagement, stronger customer loyalty, and higher conversions. With our branding support, your business not only looks great but also performs exceptionally.
 
 Key Benefits:
-- Get discovered by more local clients searching online.  
-- Build lasting visibility with proven SEO practices.  
-- Secure more consultations directly from search traffic.  
-
-With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
-      button: "Optimize Now",
+- Leverage branding to drive engagement and leads.  
+- Strengthen customer loyalty and advocacy.  
+- Increase conversions through strategic brand positioning.`,
+      button: "Grow My Brand",
       bgImage:
-        "https://images.pexels.com/photos/7119258/pexels-photo-7119258.jpeg",
+        "https://images.pexels.com/photos/3184364/pexels-photo-3184364.jpeg",
     },
   };
 

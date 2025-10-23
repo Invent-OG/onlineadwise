@@ -14,12 +14,13 @@ function WebSecond() {
         {/* Left Content */}
         <div>
           <p className="text-gray-300 leading-relaxed">
-            First impressions can have a lasting impact. Having a clean,
-            well-designed website that operates smoothly and offers a positive
-            user experience is a great way to make a memorable first impression.
-            At Nifty Marketing, we create beautiful legal websites that tell
-            your law firm’s story and quickly communicate who you are. And we
-            know you’re awesome stuff!
+            Your website is the digital face of your business — and first
+            impressions matter. At OnlineAdwise Marketing, we build visually
+            stunning, high-performing websites that reflect your brand’s
+            identity and drive measurable growth. From sleek landing pages to
+            full-scale business websites, we focus on clean design, smooth
+            functionality, and optimized performance to help you stand out in
+            the digital space.
           </p>
         </div>
 

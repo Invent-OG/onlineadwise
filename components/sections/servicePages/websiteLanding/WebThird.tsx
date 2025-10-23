@@ -20,66 +20,71 @@ function WebThird() {
     calls: null,
   });
 
-  const tabData: Record<TabKey, TabInfo> = {
-    lsa: {
-      title: "WEBSITES",
-      heading: "INCREDIBLY BEAUTIFUL WEBSITES",
-      content: `Stand out against your competition by having one of our sleek, well-designed websites. Over the years, we’ve made hundreds of websites for everything from huge full-service law firms to small single practitioner websites. We can do it all because we’ve already done it all. OnlineAdwise isn’t just a company that can make a website for lawyers. We are THE company that makes websites for lawyers.
+const tabData: Record<TabKey, TabInfo> = {
+  lsa: {
+    title: "WEBSITE DESIGN",
+    heading: "MODERN, CREATIVE & CONVERTING WEBSITES",
+    content: `Your website is more than just an online presence — it's your brand’s first impression. 
+At OnlineAdwise, we design sleek, responsive, and high-performing websites that perfectly blend creativity and functionality. 
+From corporate sites to eCommerce platforms, our team ensures your website looks amazing and performs even better.
 
 Key Benefits:
-- Appear in top local search results and Google Maps.
-- Increase profile views and website clicks.
-- Attract potential clients actively searching for legal services.`,
-      button: "Contact Us Today",
-      bgImage:
-        "https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg",
-    },
-    visibility: {
-      title: "CONVERSION",
-      heading: "MADE TO CONVERT",
-      content: `We specialize in creating high-performing law firm websites backed by data-driven research. Our landing pages are strategically designed to increase client inquiries—whether through phone calls, contact forms, or live chat. Every element of our design is focused on guiding visitors to take the next step with ease, helping your firm attract and convert more clients with confidence.
+- Visually stunning, mobile-friendly designs.  
+- Customized layouts tailored to your business goals.  
+- Built to engage visitors and boost conversions.`,
+    button: "Design My Website",
+    bgImage:
+      "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
+  },
+
+  visibility: {
+    title: "LANDING PAGES",
+    heading: "DESIGNED TO DRIVE RESULTS",
+    content: `Convert visitors into loyal customers with high-impact landing pages built for performance. 
+We focus on conversion-driven design, persuasive copy, and data-backed structure to help your campaigns perform their best. 
+Whether you’re running ads or launching a product, we make your page stand out.
 
 Key Benefits:
-- Seamlessly guide visitors toward taking action.  
-- Turn website traffic into qualified client inquiries.  
-- Maximize return on every marketing dollar.  
+- Boost conversions with strategic CTA placement.  
+- Optimized for Google Ads and social media campaigns.  
+- Proven designs that turn clicks into customers.`,
+    button: "Get My Landing Page",
+    bgImage:
+      "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg",
+  },
 
-High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
-      button: "Start Converting",
-      bgImage:
-        "https://images.pexels.com/photos/8250929/pexels-photo-8250929.jpeg",
-    },
-    reviews: {
-      title: "SPEED",
-      heading: "BUILT FOR SPEED",
-      content: `Waiting eternities for a website to load is a terrible experience. OnlineAdwise creates websites with as much form and function as you could possibly want without compromising load time. There will always be a little trade-off for next-level web experiences, but OnlineAdwise has found a great balance and makes incredibly fast websites.
-
-Key Benefits:
-- Deliver instant page loads for a smoother experience.  
-- Keep visitors engaged instead of bouncing away.  
-- Gain a competitive edge with superior performance.  
-
-Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
-      button: "Experience the Speed",
-      bgImage:
-        "https://images.pexels.com/photos/127077/pexels-photo-127077.png",
-    },
-    calls: {
-      title: "OPTIMIZATION",
-      heading: "OPTIMIZED FOR SEARCH",
-      content: `OnlineAdwise isn’t a web design company that happens to dabble in SEO. We’ve been killing it at local search marketing for other small and large law firms for nearly a decade. When we create a website for your law firm, you can rest assured we follow best practices in coding and development so that your website can perform optimally in Google and other search engines.
+  reviews: {
+    title: "SPEED & PERFORMANCE",
+    heading: "BUILT FOR SPEED AND STABILITY",
+    content: `No one likes waiting for a website to load. 
+We build lightning-fast, optimized websites that deliver a seamless browsing experience. 
+By combining clean code and modern frameworks, we make sure your site performs flawlessly on every device.
 
 Key Benefits:
-- Get discovered by more local clients searching online.  
-- Build lasting visibility with proven SEO practices.  
-- Secure more consultations directly from search traffic.  
+- Blazing-fast page load times.  
+- Optimized code for peak performance.  
+- Smooth user experience that keeps visitors engaged.`,
+    button: "Test My Site Speed",
+    bgImage: "https://images.pexels.com/photos/18105/pexels-photo.jpg",
+  },
 
-With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
-      button: "Optimize Now",
-      bgImage:
-        "https://images.pexels.com/photos/7119258/pexels-photo-7119258.jpeg",
-    },
-  };
+  calls: {
+    title: "SEO OPTIMIZATION",
+    heading: "OPTIMIZED TO RANK HIGHER",
+    content: `A beautiful website means nothing if no one sees it. 
+At OnlineAdwise, we integrate powerful SEO practices right into your website’s foundation. 
+From metadata and structure to keyword strategy, we ensure your website is ready to dominate search results.
+
+Key Benefits:
+- Higher Google rankings with smart SEO setup.  
+- Increased visibility and targeted traffic.  
+- Long-term growth through organic reach.`,
+    button: "Optimize My Website",
+    bgImage:
+      "https://images.pexels.com/photos/4458423/pexels-photo-4458423.jpeg",
+  },
+};
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(

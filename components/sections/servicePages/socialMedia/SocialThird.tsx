@@ -20,66 +20,72 @@ function SocialThird() {
     calls: null,
   });
 
-  const tabData: Record<TabKey, TabInfo> = {
-    lsa: {
-      title: "WEBSITES",
-      heading: "INCREDIBLY BEAUTIFUL WEBSITES",
-      content: `Stand out against your competition by having one of our sleek, well-designed websites. Over the years, we’ve made hundreds of websites for everything from huge full-service law firms to small single practitioner websites. We can do it all because we’ve already done it all. OnlineAdwise isn’t just a company that can make a website for lawyers. We are THE company that makes websites for lawyers.
+ const tabData: Record<TabKey, TabInfo> = {
+   lsa: {
+     title: "SOCIAL STRATEGY",
+     heading: "BUILD A BRAND THAT STANDS OUT",
+     content: `Social media success starts with strategy. 
+At OnlineAdwise Marketing, we help brands craft powerful social media strategies that tell their story, grow their audience, 
+and inspire real engagement. From content planning to creative direction, we position your brand to shine where your audience spends their time.
 
 Key Benefits:
-- Appear in top local search results and Google Maps.
-- Increase profile views and website clicks.
-- Attract potential clients actively searching for legal services.`,
-      button: "Contact Us Today",
-      bgImage:
-        "https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg",
-    },
-    visibility: {
-      title: "CONVERSION",
-      heading: "MADE TO CONVERT",
-      content: `We specialize in creating high-performing law firm websites backed by data-driven research. Our landing pages are strategically designed to increase client inquiries—whether through phone calls, contact forms, or live chat. Every element of our design is focused on guiding visitors to take the next step with ease, helping your firm attract and convert more clients with confidence.
+- Develop a customized strategy for each platform.  
+- Strengthen your brand voice and online presence.  
+- Build genuine connections with your ideal audience.`,
+     button: "Start Your Strategy",
+     bgImage:
+       "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg",
+   },
+
+   visibility: {
+     title: "CONTENT CREATION",
+     heading: "CREATE CONTENT THAT CONNECTS",
+     content: `Content is the heartbeat of social media. 
+Our creative team produces scroll-stopping visuals, engaging videos, and powerful captions that bring your brand to life. 
+We turn your ideas into high-performing posts that entertain, inform, and convert.
 
 Key Benefits:
-- Seamlessly guide visitors toward taking action.  
-- Turn website traffic into qualified client inquiries.  
-- Maximize return on every marketing dollar.  
+- Professionally designed graphics and videos.  
+- Consistent posting schedule to stay top-of-mind.  
+- Storytelling that turns followers into loyal fans.`,
+     button: "Create My Content",
+     bgImage:
+       "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
+   },
 
-High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
-      button: "Start Converting",
-      bgImage:
-        "https://images.pexels.com/photos/8250929/pexels-photo-8250929.jpeg",
-    },
-    reviews: {
-      title: "SPEED",
-      heading: "BUILT FOR SPEED",
-      content: `Waiting eternities for a website to load is a terrible experience. OnlineAdwise creates websites with as much form and function as you could possibly want without compromising load time. There will always be a little trade-off for next-level web experiences, but OnlineAdwise has found a great balance and makes incredibly fast websites.
-
-Key Benefits:
-- Deliver instant page loads for a smoother experience.  
-- Keep visitors engaged instead of bouncing away.  
-- Gain a competitive edge with superior performance.  
-
-Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
-      button: "Experience the Speed",
-      bgImage:
-        "https://images.pexels.com/photos/127077/pexels-photo-127077.png",
-    },
-    calls: {
-      title: "OPTIMIZATION",
-      heading: "OPTIMIZED FOR SEARCH",
-      content: `OnlineAdwise isn’t a web design company that happens to dabble in SEO. We’ve been killing it at local search marketing for other small and large law firms for nearly a decade. When we create a website for your law firm, you can rest assured we follow best practices in coding and development so that your website can perform optimally in Google and other search engines.
+   reviews: {
+     title: "GROWTH & ENGAGEMENT",
+     heading: "TURN FOLLOWERS INTO FANS",
+     content: `It’s not just about likes — it’s about real connections. 
+We help your brand grow organically through authentic engagement, targeted outreach, and community management. 
+Our team ensures every comment, share, and message builds stronger relationships with your audience.
 
 Key Benefits:
-- Get discovered by more local clients searching online.  
-- Build lasting visibility with proven SEO practices.  
-- Secure more consultations directly from search traffic.  
+- Increase organic followers and engagement.  
+- Build active, loyal online communities.  
+- Human-centered interaction that boosts brand trust.`,
+     button: "Grow My Audience",
+     bgImage:
+       "https://images.pexels.com/photos/4050290/pexels-photo-4050290.jpeg",
+   },
 
-With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
-      button: "Optimize Now",
-      bgImage:
-        "https://images.pexels.com/photos/7119258/pexels-photo-7119258.jpeg",
-    },
-  };
+   calls: {
+     title: "PAID SOCIAL ADS",
+     heading: "AMPLIFY YOUR REACH",
+     content: `Boost your brand visibility with targeted social media ads that deliver results. 
+We combine creative visuals, compelling copy, and precise targeting to make sure your message reaches the right audience at the right time — 
+turning clicks into customers.
+
+Key Benefits:
+- Reach new audiences with high-performing ad campaigns.  
+- Drive conversions with creative storytelling.  
+- Track and optimize performance for maximum ROI.`,
+     button: "Run My Ads",
+     bgImage:
+       "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
+   },
+ };
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(

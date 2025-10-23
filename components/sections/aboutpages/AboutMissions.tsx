@@ -8,13 +8,13 @@ function AboutMissions() {
       title: "MISSION",
       img: "https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg",
       description:
-        "Act as the Canadian leader in distribution, manufacturing, and assembly of seasonal products",
+        "To help businesses achieve predictable, scalable growth through data-driven advertising and intelligent automation — transforming digital chaos into clarity.",
     },
     {
       title: "VISION",
       img: "https://images.pexels.com/photos/1069588/pexels-photo-1069588.jpeg",
       description:
-        "Innovation, continuous improvement, and the search for reliable and cost-effective solutions are at the heart of the company's development and nationwide success.",
+        "To build a new era of marketing where every rupee spent is tracked, optimized, and multiplied — through transparency, systems, and strategy.",
     },
     {
       title: "VALUES",

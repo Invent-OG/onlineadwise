@@ -14,12 +14,14 @@ function RepSecond() {
         {/* Left Content */}
         <div>
           <p className="text-gray-300 leading-relaxed">
-            First impressions can have a lasting impact. Having a clean,
-            well-designed website that operates smoothly and offers a positive
-            user experience is a great way to make a memorable first impression.
-            At Nifty Marketing, we create beautiful legal websites that tell
-            your law firm’s story and quickly communicate who you are. And we
-            know you’re awesome stuff!
+            Your online reputation defines how potential clients perceive your
+            business long before they ever speak with you. At OnlineAdwise, we
+            help you take control of that narrative. From managing reviews and
+            improving ratings to building trust through consistent brand
+            visibility, our reputation management strategies ensure your
+            business stands out for all the right reasons. We don’t just protect
+            your reputation — we elevate it, turning positive experiences into
+            lasting impressions.
           </p>
         </div>
 

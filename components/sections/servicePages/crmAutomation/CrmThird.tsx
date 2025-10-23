@@ -22,62 +22,64 @@ function CrmThird() {
 
   const tabData: Record<TabKey, TabInfo> = {
     lsa: {
-      title: "WEBSITES",
-      heading: "INCREDIBLY BEAUTIFUL WEBSITES",
-      content: `Stand out against your competition by having one of our sleek, well-designed websites. Over the years, we’ve made hundreds of websites for everything from huge full-service law firms to small single practitioner websites. We can do it all because we’ve already done it all. OnlineAdwise isn’t just a company that can make a website for lawyers. We are THE company that makes websites for lawyers.
+      title: "AUTOMATION",
+      heading: "SMART CRM AUTOMATION",
+      content: `Managing leads manually is a thing of the past. With OnlineAdwise CRM Automation, your business can capture, nurture, and convert leads automatically — all while saving time and staying organized. Our CRM systems are designed to simplify complex workflows, streamline communication, and ensure every lead gets the attention it deserves.
 
 Key Benefits:
-- Appear in top local search results and Google Maps.
-- Increase profile views and website clicks.
-- Attract potential clients actively searching for legal services.`,
-      button: "Contact Us Today",
+- Capture and organize leads automatically from all platforms.  
+- Automate follow-ups, reminders, and lead nurturing.  
+- Integrate seamlessly with your website, ads, and social media.  
+
+Automation helps your team stay focused on what matters — building stronger client relationships and growing your business faster.`,
+      button: "Automate Your Workflow",
       bgImage:
-        "https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg",
+        "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg",
     },
     visibility: {
-      title: "CONVERSION",
-      heading: "MADE TO CONVERT",
-      content: `We specialize in creating high-performing law firm websites backed by data-driven research. Our landing pages are strategically designed to increase client inquiries—whether through phone calls, contact forms, or live chat. Every element of our design is focused on guiding visitors to take the next step with ease, helping your firm attract and convert more clients with confidence.
+      title: "EFFICIENCY",
+      heading: "STREAMLINE YOUR SALES PROCESS",
+      content: `From lead generation to client onboarding, every touchpoint matters. Our CRM automation tools ensure that your entire sales and marketing process runs smoothly — without missed opportunities or manual errors. Let technology handle the busywork while your team focuses on conversions.
 
 Key Benefits:
-- Seamlessly guide visitors toward taking action.  
-- Turn website traffic into qualified client inquiries.  
-- Maximize return on every marketing dollar.  
+- Reduce manual tasks and improve response time.  
+- Track every interaction with real-time visibility.  
+- Turn insights into smarter sales strategies.  
 
-High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
-      button: "Start Converting",
+Efficiency isn’t just about speed — it’s about precision, consistency, and better client experiences.`,
+      button: "Boost Efficiency",
       bgImage:
-        "https://images.pexels.com/photos/8250929/pexels-photo-8250929.jpeg",
+        "https://images.pexels.com/photos/5717541/pexels-photo-5717541.jpeg",
     },
     reviews: {
-      title: "SPEED",
-      heading: "BUILT FOR SPEED",
-      content: `Waiting eternities for a website to load is a terrible experience. OnlineAdwise creates websites with as much form and function as you could possibly want without compromising load time. There will always be a little trade-off for next-level web experiences, but OnlineAdwise has found a great balance and makes incredibly fast websites.
+      title: "INSIGHTS",
+      heading: "DATA-DRIVEN DECISIONS",
+      content: `Make smarter marketing and sales decisions with powerful CRM insights. Our automation tools provide real-time analytics, helping you understand lead sources, conversion rates, and campaign performance at a glance. Empower your team with the data they need to close more deals.
 
 Key Benefits:
-- Deliver instant page loads for a smoother experience.  
-- Keep visitors engaged instead of bouncing away.  
-- Gain a competitive edge with superior performance.  
+- Monitor performance with custom dashboards.  
+- Identify top-performing campaigns and channels.  
+- Predict trends with AI-powered reporting.  
 
-Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
-      button: "Experience the Speed",
+Transform your CRM from a contact list into a growth-driving engine.`,
+      button: "View Insights",
       bgImage:
-        "https://images.pexels.com/photos/127077/pexels-photo-127077.png",
+        "https://images.pexels.com/photos/1181326/pexels-photo-1181326.jpeg",
     },
     calls: {
-      title: "OPTIMIZATION",
-      heading: "OPTIMIZED FOR SEARCH",
-      content: `OnlineAdwise isn’t a web design company that happens to dabble in SEO. We’ve been killing it at local search marketing for other small and large law firms for nearly a decade. When we create a website for your law firm, you can rest assured we follow best practices in coding and development so that your website can perform optimally in Google and other search engines.
+      title: "GROWTH",
+      heading: "BUILD STRONGER CLIENT RELATIONSHIPS",
+      content: `CRM automation isn’t just about technology — it’s about people. OnlineAdwise helps you stay connected with your leads and clients at every stage of their journey. From personalized messaging to smart segmentation, we help you build relationships that convert and last.
 
 Key Benefits:
-- Get discovered by more local clients searching online.  
-- Build lasting visibility with proven SEO practices.  
-- Secure more consultations directly from search traffic.  
+- Personalize every client interaction automatically.  
+- Boost retention through consistent communication.  
+- Scale your business with smart automated systems.  
 
-With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
-      button: "Optimize Now",
+Grow your business with workflows that work — powered by automation.`,
+      button: "Start Growing",
       bgImage:
-        "https://images.pexels.com/photos/7119258/pexels-photo-7119258.jpeg",
+        "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg",
     },
   };
 

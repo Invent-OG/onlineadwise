@@ -22,62 +22,56 @@ function AnalyticsThird() {
 
   const tabData: Record<TabKey, TabInfo> = {
     lsa: {
-      title: "WEBSITES",
-      heading: "INCREDIBLY BEAUTIFUL WEBSITES",
-      content: `Stand out against your competition by having one of our sleek, well-designed websites. Over the years, we’ve made hundreds of websites for everything from huge full-service law firms to small single practitioner websites. We can do it all because we’ve already done it all. OnlineAdwise isn’t just a company that can make a website for lawyers. We are THE company that makes websites for lawyers.
+      title: "INSIGHTS",
+      heading: "DATA THAT DRIVES DECISIONS",
+      content: `Numbers tell a story — we help you read it. Our analytics platform uncovers what’s really happening behind every click, visit, and conversion. From traffic sources to audience behavior, we turn data into insights that power smarter marketing decisions and stronger ROI.
 
 Key Benefits:
-- Appear in top local search results and Google Maps.
-- Increase profile views and website clicks.
-- Attract potential clients actively searching for legal services.`,
-      button: "Contact Us Today",
+- Understand exactly where your leads and traffic come from.  
+- Identify top-performing channels and campaigns.  
+- Gain clarity on user behavior to refine your strategy.`,
+      button: "Unlock Insights",
       bgImage:
-        "https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg",
+        "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg",
     },
     visibility: {
-      title: "CONVERSION",
-      heading: "MADE TO CONVERT",
-      content: `We specialize in creating high-performing law firm websites backed by data-driven research. Our landing pages are strategically designed to increase client inquiries—whether through phone calls, contact forms, or live chat. Every element of our design is focused on guiding visitors to take the next step with ease, helping your firm attract and convert more clients with confidence.
+      title: "PERFORMANCE",
+      heading: "TRACK WHAT MATTERS MOST",
+      content: `Stop guessing and start measuring. We provide real-time dashboards and performance tracking that show how every marketing dollar works for your business. With accurate reporting and actionable analytics, you’ll always know what’s working — and where to improve.
 
 Key Benefits:
-- Seamlessly guide visitors toward taking action.  
-- Turn website traffic into qualified client inquiries.  
-- Maximize return on every marketing dollar.  
-
-High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
-      button: "Start Converting",
+- Monitor key metrics across all platforms.  
+- Get transparent, easy-to-read performance reports.  
+- Measure ROI with precision and confidence.`,
+      button: "Measure Performance",
       bgImage:
-        "https://images.pexels.com/photos/8250929/pexels-photo-8250929.jpeg",
+        "https://images.pexels.com/photos/6476588/pexels-photo-6476588.jpeg",
     },
     reviews: {
-      title: "SPEED",
-      heading: "BUILT FOR SPEED",
-      content: `Waiting eternities for a website to load is a terrible experience. OnlineAdwise creates websites with as much form and function as you could possibly want without compromising load time. There will always be a little trade-off for next-level web experiences, but OnlineAdwise has found a great balance and makes incredibly fast websites.
+      title: "OPTIMIZATION",
+      heading: "TURN DATA INTO GROWTH",
+      content: `Analytics isn’t just about tracking — it’s about transformation. We analyze trends, audience behavior, and campaign data to help you continuously optimize your marketing strategies. The result? Better performance, higher conversions, and measurable growth.
 
 Key Benefits:
-- Deliver instant page loads for a smoother experience.  
-- Keep visitors engaged instead of bouncing away.  
-- Gain a competitive edge with superior performance.  
-
-Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
-      button: "Experience the Speed",
+- Use real data to fine-tune your marketing efforts.  
+- Improve campaign efficiency with actionable insights.  
+- Continuously boost conversions and engagement.`,
+      button: "Optimize with Data",
       bgImage:
-        "https://images.pexels.com/photos/127077/pexels-photo-127077.png",
+        "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
     },
     calls: {
-      title: "OPTIMIZATION",
-      heading: "OPTIMIZED FOR SEARCH",
-      content: `OnlineAdwise isn’t a web design company that happens to dabble in SEO. We’ve been killing it at local search marketing for other small and large law firms for nearly a decade. When we create a website for your law firm, you can rest assured we follow best practices in coding and development so that your website can perform optimally in Google and other search engines.
+      title: "REPORTING",
+      heading: "CLEAR, ACTIONABLE REPORTS",
+      content: `We believe analytics should simplify decisions — not complicate them. Our reports are designed to give you clarity, not confusion. Get detailed breakdowns of traffic, conversions, and performance metrics that make sense at a glance and drive real business outcomes.
 
 Key Benefits:
-- Get discovered by more local clients searching online.  
-- Build lasting visibility with proven SEO practices.  
-- Secure more consultations directly from search traffic.  
-
-With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
-      button: "Optimize Now",
+- Access visual, easy-to-understand reports.  
+- Get monthly or on-demand performance updates.  
+- Make confident decisions backed by accurate data.`,
+      button: "Get My Report",
       bgImage:
-        "https://images.pexels.com/photos/7119258/pexels-photo-7119258.jpeg",
+        "https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg",
     },
   };
 

@@ -14,12 +14,14 @@ function SupportSecond() {
         {/* Left Content */}
         <div>
           <p className="text-gray-300 leading-relaxed">
-            First impressions can have a lasting impact. Having a clean,
-            well-designed website that operates smoothly and offers a positive
-            user experience is a great way to make a memorable first impression.
-            At Nifty Marketing, we create beautiful legal websites that tell
-            your law firm’s story and quickly communicate who you are. And we
-            know you’re awesome stuff!
+            Your brand is more than just a logo — it’s the story, voice, and
+            feeling that people remember. A strong brand builds trust, loyalty,
+            and recognition that lasts. At OnlineAdwise, we help businesses
+            define and strengthen their identity through cohesive design, clear
+            messaging, and consistent visuals across all platforms. Whether
+            you’re building a new brand or refreshing an existing one, we make
+            sure your business stands out and connects meaningfully with your
+            audience.
           </p>
         </div>
 

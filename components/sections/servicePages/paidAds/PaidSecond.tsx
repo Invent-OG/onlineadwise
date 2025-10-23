@@ -14,12 +14,18 @@ function PaidSecond() {
         {/* Left Content */}
         <div>
           <p className="text-gray-300 leading-relaxed">
-            First impressions can have a lasting impact. Having a clean,
-            well-designed website that operates smoothly and offers a positive
-            user experience is a great way to make a memorable first impression.
-            At Nifty Marketing, we create beautiful legal websites that tell
-            your law firm’s story and quickly communicate who you are. And we
-            know you’re awesome stuff!
+            Get your business in front of the right people at the right time
+            with our data-driven paid advertising strategies. At OnlineAdwise
+            Marketing, we create high-performing ad campaigns across Google,
+            Meta, and other major platforms to generate qualified leads and
+            measurable growth. Our experts handle everything — from strategy and
+            creative design to ongoing optimization — ensuring every click
+            counts and every dollar works harder for you.
+            <br />
+            <br />
+            Whether you’re launching a new service, promoting a product, or
+            scaling your business, our paid ads team helps you reach your ideal
+            audience, maximize ROI, and grow faster than ever before.
           </p>
         </div>
 

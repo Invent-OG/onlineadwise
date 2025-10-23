@@ -14,12 +14,18 @@ function SocialSecond() {
         {/* Left Content */}
         <div>
           <p className="text-gray-300 leading-relaxed">
-            First impressions can have a lasting impact. Having a clean,
-            well-designed website that operates smoothly and offers a positive
-            user experience is a great way to make a memorable first impression.
-            At Nifty Marketing, we create beautiful legal websites that tell
-            your law firm’s story and quickly communicate who you are. And we
-            know you’re awesome stuff!
+            Your brand deserves to be seen, heard, and remembered. At
+            OnlineAdwise Marketing, we turn social media into a powerful growth
+            engine — building awareness, engagement, and loyalty across every
+            platform. From crafting scroll-stopping content to managing paid
+            campaigns and daily engagement, our team helps you connect
+            authentically with your audience and grow your brand presence the
+            right way.
+            <br />
+            <br />
+            Whether it’s Instagram, Facebook, LinkedIn, or YouTube — we create
+            strategies that blend creativity and data to help you stand out,
+            attract followers, and convert them into loyal customers.
           </p>
         </div>
 

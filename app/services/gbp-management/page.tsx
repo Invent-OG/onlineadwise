@@ -4,6 +4,7 @@ import GbpFaqs from "@/components/sections/servicePages/gbpManagement/GbpFaqs";
 import GbpFour from "@/components/sections/servicePages/gbpManagement/GbpFour";
 import GbpHero from "@/components/sections/servicePages/gbpManagement/GbpHero";
 import GbpMarquee from "@/components/sections/servicePages/gbpManagement/GbpMarquee";
+import GbpPrice from "@/components/sections/servicePages/gbpManagement/GbpPrice";
 import GbpSecond from "@/components/sections/servicePages/gbpManagement/GbpSecond";
 import GbpThird from "@/components/sections/servicePages/gbpManagement/GbpThird";
 import TestimonialGbp from "@/components/sections/servicePages/gbpManagement/TestimonialGbp";
@@ -19,6 +20,7 @@ function page() {
       <GbpSecond />
       <GbpThird />
       <GbpFour />
+      <GbpPrice />
       {/* <GbpFive /> */}
       <TestimonialGbp />
       <GbpFaqs />

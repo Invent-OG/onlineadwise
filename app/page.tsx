@@ -30,6 +30,8 @@ import StickyShowcase from "@/components/sections/StickyShowcase";
 import StickyShowCaseTwo from "@/components/sections/StickyShowCaseTwo";
 import StickyShowCaseThree from "@/components/sections/StickyShowCaseThree";
 import TestimonialHome from "@/components/sections/TestimonialHome";
+import HomeMarquee from "@/components/sections/HomeMarquee";
+import Gallery from "@/components/sections/Gallery";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -57,13 +59,15 @@ export default function Home() {
       {/* <Hero /> */}
       <TestVideo />
       <MarqueeText />
+      <HomeMarquee />
       <PainPoints />
       {/* <Solution /> */}
       <SalonMarketing />
+      <Gallery />
       {/* <StickyShowcase />
       <StickyShowCaseTwo />
       <StickyShowCaseThree /> */}
-      <Slider />
+      {/* <Slider /> */}
       <PackagesSection />
       {/* <ImageText /> */}
       {/* <SpaParallax /> */}

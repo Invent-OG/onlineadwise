@@ -22,64 +22,59 @@ function EmailThird() {
 
   const tabData: Record<TabKey, TabInfo> = {
     lsa: {
-      title: "WEBSITES",
-      heading: "INCREDIBLY BEAUTIFUL WEBSITES",
-      content: `Stand out against your competition by having one of our sleek, well-designed websites. Over the years, we’ve made hundreds of websites for everything from huge full-service law firms to small single practitioner websites. We can do it all because we’ve already done it all. OnlineAdwise isn’t just a company that can make a website for lawyers. We are THE company that makes websites for lawyers.
+      title: "PERSONALIZATION",
+      heading: "CONNECT THROUGH PERSONALIZED MESSAGING",
+      content: `Build stronger relationships with your audience using messages that feel personal, timely, and relevant. Our Email & SMS campaigns are tailored to each customer’s behavior and preferences — ensuring every message hits the mark and drives engagement.
 
 Key Benefits:
-- Appear in top local search results and Google Maps.
-- Increase profile views and website clicks.
-- Attract potential clients actively searching for legal services.`,
-      button: "Contact Us Today",
+- Deliver messages your audience actually wants to read.  
+- Improve open rates and click-throughs with smart personalization.  
+- Build lasting connections that turn followers into loyal customers.`,
+      button: "Start Personalizing",
       bgImage:
-        "https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg",
+        "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg",
     },
     visibility: {
-      title: "CONVERSION",
-      heading: "MADE TO CONVERT",
-      content: `We specialize in creating high-performing law firm websites backed by data-driven research. Our landing pages are strategically designed to increase client inquiries—whether through phone calls, contact forms, or live chat. Every element of our design is focused on guiding visitors to take the next step with ease, helping your firm attract and convert more clients with confidence.
+      title: "AUTOMATION",
+      heading: "SMART AUTOMATION THAT WORKS 24/7",
+      content: `Stop wasting time on manual follow-ups. With intelligent automation, we help you send the right message at the right moment — from welcome emails to abandoned cart reminders and special offers. Let your marketing run smoothly while you focus on growth.
 
 Key Benefits:
-- Seamlessly guide visitors toward taking action.  
-- Turn website traffic into qualified client inquiries.  
-- Maximize return on every marketing dollar.  
-
-High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
-      button: "Start Converting",
+- Save time with fully automated workflows.  
+- Reach your customers instantly with SMS or email triggers.  
+- Keep leads warm and engaged automatically.`,
+      button: "Automate Now",
       bgImage:
-        "https://images.pexels.com/photos/8250929/pexels-photo-8250929.jpeg",
+        "https://images.pexels.com/photos/7433875/pexels-photo-7433875.jpeg",
     },
     reviews: {
-      title: "SPEED",
-      heading: "BUILT FOR SPEED",
-      content: `Waiting eternities for a website to load is a terrible experience. OnlineAdwise creates websites with as much form and function as you could possibly want without compromising load time. There will always be a little trade-off for next-level web experiences, but OnlineAdwise has found a great balance and makes incredibly fast websites.
+      title: "ENGAGEMENT",
+      heading: "BOOST ENGAGEMENT AND CUSTOMER LOYALTY",
+      content: `Keep your audience excited about your brand with creative campaigns that entertain, inform, and convert. Whether it’s promotional offers, newsletters, or updates, our Email & SMS strategies keep your audience coming back for more.
 
 Key Benefits:
-- Deliver instant page loads for a smoother experience.  
-- Keep visitors engaged instead of bouncing away.  
-- Gain a competitive edge with superior performance.  
-
-Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
-      button: "Experience the Speed",
+- Drive repeat purchases with engaging campaigns.  
+- Increase customer lifetime value through regular communication.  
+- Build loyalty through consistent, authentic engagement.`,
+      button: "Engage Your Audience",
       bgImage:
-        "https://images.pexels.com/photos/127077/pexels-photo-127077.png",
+        "https://images.pexels.com/photos/4050291/pexels-photo-4050291.jpeg",
     },
     calls: {
-      title: "OPTIMIZATION",
-      heading: "OPTIMIZED FOR SEARCH",
-      content: `OnlineAdwise isn’t a web design company that happens to dabble in SEO. We’ve been killing it at local search marketing for other small and large law firms for nearly a decade. When we create a website for your law firm, you can rest assured we follow best practices in coding and development so that your website can perform optimally in Google and other search engines.
+      title: "PERFORMANCE",
+      heading: "TRACK RESULTS & DRIVE GROWTH",
+      content: `Success is in the data. We measure every click, open, and response to optimize future campaigns for better performance. With detailed analytics and performance insights, you’ll always know what’s working — and how to scale it further.
 
 Key Benefits:
-- Get discovered by more local clients searching online.  
-- Build lasting visibility with proven SEO practices.  
-- Secure more consultations directly from search traffic.  
-
-With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
-      button: "Optimize Now",
+- Gain real-time insights into campaign performance.  
+- Optimize strategies with data-driven decision-making.  
+- Increase conversions and ROI with precise targeting.`,
+      button: "Measure Success",
       bgImage:
-        "https://images.pexels.com/photos/7119258/pexels-photo-7119258.jpeg",
+        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
     },
   };
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(

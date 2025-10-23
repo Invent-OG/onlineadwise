@@ -14,12 +14,19 @@ function CrmSecond() {
         {/* Left Content */}
         <div>
           <p className="text-gray-300 leading-relaxed">
-            First impressions can have a lasting impact. Having a clean,
-            well-designed website that operates smoothly and offers a positive
-            user experience is a great way to make a memorable first impression.
-            At Nifty Marketing, we create beautiful legal websites that tell
-            your law firm’s story and quickly communicate who you are. And we
-            know you’re awesome stuff!
+            Managing leads and clients manually can slow down your business —
+            that’s where automation takes over. At OnlineAdwise Marketing, we
+            build intelligent CRM automation systems that help you capture,
+            nurture, and convert leads effortlessly. From automated follow-ups
+            and reminders to seamless integrations with your website and ads,
+            our CRM solutions keep your business running smoothly while you
+            focus on growth.
+            <br />
+            <br />
+            We help you save time, stay organized, and never miss another
+            opportunity. Whether you’re a growing startup or an established
+            brand, our automation workflows make your marketing and sales
+            processes smarter, faster, and more effective.
           </p>
         </div>
 

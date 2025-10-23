@@ -14,12 +14,14 @@ function LocalSecond() {
         {/* Left Content */}
         <div>
           <p className="text-gray-300 leading-relaxed">
-            First impressions can have a lasting impact. Having a clean,
-            well-designed website that operates smoothly and offers a positive
-            user experience is a great way to make a memorable first impression.
-            At Nifty Marketing, we create beautiful legal websites that tell
-            your law firm’s story and quickly communicate who you are. And we
-            know you’re awesome stuff!
+            Local visibility is everything for growing businesses. At
+            OnlineAdwise, we help you dominate your local market through smart
+            SEO strategies that put your business in front of nearby customers
+            who are ready to take action. From optimizing your Google Business
+            Profile to improving local rankings, we make sure you appear exactly
+            where it matters most. With our proven approach, you don’t just get
+            traffic — you get real, local results that drive calls, visits, and
+            conversions.
           </p>
         </div>
 

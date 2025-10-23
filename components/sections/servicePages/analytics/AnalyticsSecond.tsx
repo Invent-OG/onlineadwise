@@ -14,12 +14,12 @@ function AnalyticsSecond() {
         {/* Left Content */}
         <div>
           <p className="text-gray-300 leading-relaxed">
-            First impressions can have a lasting impact. Having a clean,
-            well-designed website that operates smoothly and offers a positive
-            user experience is a great way to make a memorable first impression.
-            At Nifty Marketing, we create beautiful legal websites that tell
-            your law firm’s story and quickly communicate who you are. And we
-            know you’re awesome stuff!
+            Data drives smarter decisions. With our advanced analytics and
+            performance tracking, we help you understand exactly what’s working
+            — and what’s not. From website traffic and user behavior to lead
+            conversions and ROI, we turn complex data into clear, actionable
+            insights. At OnlineAdwise, we believe success comes from measuring,
+            refining, and optimizing every campaign for maximum impact.
           </p>
         </div>
 

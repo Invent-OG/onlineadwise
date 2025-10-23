@@ -22,64 +22,59 @@ function RepThird() {
 
   const tabData: Record<TabKey, TabInfo> = {
     lsa: {
-      title: "WEBSITES",
-      heading: "INCREDIBLY BEAUTIFUL WEBSITES",
-      content: `Stand out against your competition by having one of our sleek, well-designed websites. Over the years, we’ve made hundreds of websites for everything from huge full-service law firms to small single practitioner websites. We can do it all because we’ve already done it all. OnlineAdwise isn’t just a company that can make a website for lawyers. We are THE company that makes websites for lawyers.
+      title: "TRUST",
+      heading: "BUILD CREDIBILITY THAT LASTS",
+      content: `Your reputation is your most valuable asset. We help your business establish trust with potential clients through strategic reputation management. By highlighting your strengths and addressing feedback professionally, we ensure your brand reflects reliability and excellence.
 
 Key Benefits:
-- Appear in top local search results and Google Maps.
-- Increase profile views and website clicks.
-- Attract potential clients actively searching for legal services.`,
-      button: "Contact Us Today",
+- Strengthen brand image and client trust.  
+- Showcase positive reviews and success stories.  
+- Build a consistent, professional online presence.`,
+      button: "Build Trust Today",
       bgImage:
-        "https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg",
+        "https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg",
     },
     visibility: {
-      title: "CONVERSION",
-      heading: "MADE TO CONVERT",
-      content: `We specialize in creating high-performing law firm websites backed by data-driven research. Our landing pages are strategically designed to increase client inquiries—whether through phone calls, contact forms, or live chat. Every element of our design is focused on guiding visitors to take the next step with ease, helping your firm attract and convert more clients with confidence.
+      title: "REVIEWS",
+      heading: "TURN REVIEWS INTO RESULTS",
+      content: `Positive reviews are the backbone of a strong online reputation. We help you collect authentic feedback, respond effectively, and display testimonials that attract new clients. Every interaction becomes a powerful opportunity to grow your reputation.
 
 Key Benefits:
-- Seamlessly guide visitors toward taking action.  
-- Turn website traffic into qualified client inquiries.  
-- Maximize return on every marketing dollar.  
-
-High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
-      button: "Start Converting",
+- Increase positive review volume across major platforms.  
+- Monitor and respond to feedback in real time.  
+- Turn client satisfaction into marketing momentum.`,
+      button: "Boost Your Reviews",
       bgImage:
-        "https://images.pexels.com/photos/8250929/pexels-photo-8250929.jpeg",
+        "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg",
     },
     reviews: {
-      title: "SPEED",
-      heading: "BUILT FOR SPEED",
-      content: `Waiting eternities for a website to load is a terrible experience. OnlineAdwise creates websites with as much form and function as you could possibly want without compromising load time. There will always be a little trade-off for next-level web experiences, but OnlineAdwise has found a great balance and makes incredibly fast websites.
+      title: "VISIBILITY",
+      heading: "ENHANCE YOUR ONLINE PRESENCE",
+      content: `We make sure your reputation shines everywhere it matters — Google, social media, directories, and beyond. Our proven strategies help you rise above competitors, attract quality leads, and strengthen brand authority through trust and visibility.
 
 Key Benefits:
-- Deliver instant page loads for a smoother experience.  
-- Keep visitors engaged instead of bouncing away.  
-- Gain a competitive edge with superior performance.  
-
-Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
-      button: "Experience the Speed",
+- Dominate local search results with trusted profiles.  
+- Increase engagement across review and social platforms.  
+- Maintain a unified brand image across the web.`,
+      button: "Get Noticed Online",
       bgImage:
-        "https://images.pexels.com/photos/127077/pexels-photo-127077.png",
+        "https://images.pexels.com/photos/3760853/pexels-photo-3760853.jpeg",
     },
     calls: {
-      title: "OPTIMIZATION",
-      heading: "OPTIMIZED FOR SEARCH",
-      content: `OnlineAdwise isn’t a web design company that happens to dabble in SEO. We’ve been killing it at local search marketing for other small and large law firms for nearly a decade. When we create a website for your law firm, you can rest assured we follow best practices in coding and development so that your website can perform optimally in Google and other search engines.
+      title: "GROWTH",
+      heading: "REPUTATION THAT DRIVES GROWTH",
+      content: `A great reputation doesn’t just build trust — it fuels business growth. Our team turns your reputation into a competitive advantage by connecting credibility with conversions. We help you attract, impress, and retain more clients effortlessly.
 
 Key Benefits:
-- Get discovered by more local clients searching online.  
-- Build lasting visibility with proven SEO practices.  
-- Secure more consultations directly from search traffic.  
-
-With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
-      button: "Optimize Now",
+- Convert trust into measurable business results.  
+- Build long-term client loyalty and referrals.  
+- Protect and enhance your brand image with confidence.`,
+      button: "Grow with Confidence",
       bgImage:
-        "https://images.pexels.com/photos/7119258/pexels-photo-7119258.jpeg",
+        "https://images.pexels.com/photos/3182778/pexels-photo-3182778.jpeg",
     },
   };
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -22,62 +22,56 @@ function LocalThird() {
 
   const tabData: Record<TabKey, TabInfo> = {
     lsa: {
-      title: "WEBSITES",
-      heading: "INCREDIBLY BEAUTIFUL WEBSITES",
-      content: `Stand out against your competition by having one of our sleek, well-designed websites. Over the years, we’ve made hundreds of websites for everything from huge full-service law firms to small single practitioner websites. We can do it all because we’ve already done it all. OnlineAdwise isn’t just a company that can make a website for lawyers. We are THE company that makes websites for lawyers.
+      title: "VISIBILITY",
+      heading: "BOOST YOUR LOCAL PRESENCE",
+      content: `Get your business noticed where it matters most — in local searches. Our Local SEO strategies help your brand appear at the top of Google Maps and local search results, ensuring that nearby customers can easily find and trust your business. From optimizing listings to building strong location-based signals, we position your business for maximum visibility and reach.
 
 Key Benefits:
-- Appear in top local search results and Google Maps.
-- Increase profile views and website clicks.
-- Attract potential clients actively searching for legal services.`,
-      button: "Contact Us Today",
+- Rank higher on Google Maps and local search.  
+- Drive real traffic from nearby customers.  
+- Strengthen local brand trust and awareness.`,
+      button: "Improve My Visibility",
       bgImage:
-        "https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg",
+        "https://images.pexels.com/photos/7578907/pexels-photo-7578907.jpeg",
     },
     visibility: {
-      title: "CONVERSION",
-      heading: "MADE TO CONVERT",
-      content: `We specialize in creating high-performing law firm websites backed by data-driven research. Our landing pages are strategically designed to increase client inquiries—whether through phone calls, contact forms, or live chat. Every element of our design is focused on guiding visitors to take the next step with ease, helping your firm attract and convert more clients with confidence.
+      title: "REPUTATION",
+      heading: "BUILD TRUST WITH REVIEWS",
+      content: `Your reputation defines your success locally. We help you manage and grow your online reviews across Google and major directories. With consistent engagement and authentic responses, your business earns the trust and confidence of potential customers — boosting your credibility and conversion rates.
 
 Key Benefits:
-- Seamlessly guide visitors toward taking action.  
-- Turn website traffic into qualified client inquiries.  
-- Maximize return on every marketing dollar.  
-
-High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
-      button: "Start Converting",
+- Generate more 5-star Google reviews.  
+- Build credibility with consistent engagement.  
+- Turn positive feedback into lasting loyalty.`,
+      button: "Manage My Reviews",
       bgImage:
-        "https://images.pexels.com/photos/8250929/pexels-photo-8250929.jpeg",
+        "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg",
     },
     reviews: {
-      title: "SPEED",
-      heading: "BUILT FOR SPEED",
-      content: `Waiting eternities for a website to load is a terrible experience. OnlineAdwise creates websites with as much form and function as you could possibly want without compromising load time. There will always be a little trade-off for next-level web experiences, but OnlineAdwise has found a great balance and makes incredibly fast websites.
+      title: "ENGAGEMENT",
+      heading: "CONNECT WITH LOCAL CUSTOMERS",
+      content: `We create strategies that help your business stay connected with your local audience through regular posts, offers, and updates. By staying active and relevant, you increase your chances of appearing in discovery searches — keeping your brand top of mind for customers when they’re ready to act.
 
 Key Benefits:
-- Deliver instant page loads for a smoother experience.  
-- Keep visitors engaged instead of bouncing away.  
-- Gain a competitive edge with superior performance.  
-
-Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
-      button: "Experience the Speed",
+- Stay visible with fresh, localized content.  
+- Engage customers with posts, offers, and updates.  
+- Increase clicks, calls, and walk-ins organically.`,
+      button: "Engage Locally",
       bgImage:
-        "https://images.pexels.com/photos/127077/pexels-photo-127077.png",
+        "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
     },
     calls: {
-      title: "OPTIMIZATION",
-      heading: "OPTIMIZED FOR SEARCH",
-      content: `OnlineAdwise isn’t a web design company that happens to dabble in SEO. We’ve been killing it at local search marketing for other small and large law firms for nearly a decade. When we create a website for your law firm, you can rest assured we follow best practices in coding and development so that your website can perform optimally in Google and other search engines.
+      title: "GROWTH",
+      heading: "TURN LOCAL SEARCHES INTO SALES",
+      content: `It’s not just about visibility — it’s about growth. With our Local SEO expertise, every optimized listing, review, and keyword brings you one step closer to real conversions. We combine local optimization with data-driven insights to ensure your business captures more leads, calls, and store visits than ever before.
 
 Key Benefits:
-- Get discovered by more local clients searching online.  
-- Build lasting visibility with proven SEO practices.  
-- Secure more consultations directly from search traffic.  
-
-With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
-      button: "Optimize Now",
+- Convert searchers into paying customers.  
+- Generate more leads from local intent traffic.  
+- Build a sustainable growth engine for your business.`,
+      button: "Start Growing Locally",
       bgImage:
-        "https://images.pexels.com/photos/7119258/pexels-photo-7119258.jpeg",
+        "https://images.pexels.com/photos/8867439/pexels-photo-8867439.jpeg",
     },
   };
 

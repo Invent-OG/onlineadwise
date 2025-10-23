@@ -14,12 +14,13 @@ function EmailSecond() {
         {/* Left Content */}
         <div>
           <p className="text-gray-300 leading-relaxed">
-            First impressions can have a lasting impact. Having a clean,
-            well-designed website that operates smoothly and offers a positive
-            user experience is a great way to make a memorable first impression.
-            At Nifty Marketing, we create beautiful legal websites that tell
-            your law firm’s story and quickly communicate who you are. And we
-            know you’re awesome stuff!
+            Staying connected with your audience is the key to lasting
+            relationships. At OnlineAdwise, we craft powerful Email and SMS
+            campaigns that keep your business top of mind. From personalized
+            messages to automated follow-ups, our strategies are designed to
+            engage, nurture, and convert your audience at every step. Whether
+            it’s sharing promotions, updates, or reminders — we help you reach
+            your customers directly, effectively, and with impact.
           </p>
         </div>
 

@@ -22,64 +22,70 @@ function PaidThird() {
 
   const tabData: Record<TabKey, TabInfo> = {
     lsa: {
-      title: "WEBSITES",
-      heading: "INCREDIBLY BEAUTIFUL WEBSITES",
-      content: `Stand out against your competition by having one of our sleek, well-designed websites. Over the years, we’ve made hundreds of websites for everything from huge full-service law firms to small single practitioner websites. We can do it all because we’ve already done it all. OnlineAdwise isn’t just a company that can make a website for lawyers. We are THE company that makes websites for lawyers.
+      title: "GOOGLE ADS",
+      heading: "SMART CAMPAIGNS THAT DRIVE RESULTS",
+      content: `Get found by your ideal customers the moment they search. 
+At OnlineAdwise Marketing, we create and manage high-performing Google Ads campaigns designed to deliver instant, measurable results. 
+From keyword research to ad copywriting and optimization, every campaign is engineered to maximize ROI and bring in high-quality leads.
 
 Key Benefits:
-- Appear in top local search results and Google Maps.
-- Increase profile views and website clicks.
-- Attract potential clients actively searching for legal services.`,
-      button: "Contact Us Today",
+- Appear at the top of Google search results.  
+- Target ready-to-convert audiences with precision.  
+- Generate consistent, trackable leads for your business.`,
+      button: "Launch Google Ads",
       bgImage:
-        "https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg",
+        "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg",
     },
+
     visibility: {
-      title: "CONVERSION",
-      heading: "MADE TO CONVERT",
-      content: `We specialize in creating high-performing law firm websites backed by data-driven research. Our landing pages are strategically designed to increase client inquiries—whether through phone calls, contact forms, or live chat. Every element of our design is focused on guiding visitors to take the next step with ease, helping your firm attract and convert more clients with confidence.
+      title: "META & SOCIAL ADS",
+      heading: "ENGAGE. CONNECT. CONVERT.",
+      content: `Turn social media into a revenue engine. 
+Our Meta (Facebook & Instagram) ad campaigns are crafted to capture attention, tell your brand’s story, and inspire action. 
+We use creative visuals, compelling copy, and advanced targeting to convert scrollers into customers.
 
 Key Benefits:
-- Seamlessly guide visitors toward taking action.  
-- Turn website traffic into qualified client inquiries.  
-- Maximize return on every marketing dollar.  
-
-High-quality backlinks differentiate your law firm from competitors and contribute directly to increased leads and visibility.`,
-      button: "Start Converting",
+- Reach the right audience on Facebook and Instagram.  
+- Boost brand awareness with visually engaging creatives.  
+- Drive clicks, leads, and purchases with data-driven ads.`,
+      button: "Run Social Ads",
       bgImage:
-        "https://images.pexels.com/photos/8250929/pexels-photo-8250929.jpeg",
+        "https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg",
     },
+
     reviews: {
-      title: "SPEED",
-      heading: "BUILT FOR SPEED",
-      content: `Waiting eternities for a website to load is a terrible experience. OnlineAdwise creates websites with as much form and function as you could possibly want without compromising load time. There will always be a little trade-off for next-level web experiences, but OnlineAdwise has found a great balance and makes incredibly fast websites.
+      title: "RETARGETING",
+      heading: "RECONNECT WITH LOST VISITORS",
+      content: `Not every visitor converts on the first visit — that’s where retargeting comes in. 
+We strategically re-engage users who have shown interest in your brand, turning missed opportunities into real customers. 
+Stay top-of-mind and bring back high-intent visitors who are ready to buy.
 
 Key Benefits:
-- Deliver instant page loads for a smoother experience.  
-- Keep visitors engaged instead of bouncing away.  
-- Gain a competitive edge with superior performance.  
-
-Proper lead attribution ensures your marketing budget is spent wisely, improving ROI and growth.`,
-      button: "Experience the Speed",
+- Reconnect with website visitors across the web.  
+- Increase conversions through strategic ad reminders.  
+- Boost ROI by targeting warm, high-intent audiences.`,
+      button: "Start Retargeting",
       bgImage:
-        "https://images.pexels.com/photos/127077/pexels-photo-127077.png",
+        "https://images.pexels.com/photos/7567449/pexels-photo-7567449.jpeg",
     },
+
     calls: {
-      title: "OPTIMIZATION",
-      heading: "OPTIMIZED FOR SEARCH",
-      content: `OnlineAdwise isn’t a web design company that happens to dabble in SEO. We’ve been killing it at local search marketing for other small and large law firms for nearly a decade. When we create a website for your law firm, you can rest assured we follow best practices in coding and development so that your website can perform optimally in Google and other search engines.
+      title: "PERFORMANCE TRACKING",
+      heading: "OPTIMIZED FOR ROI",
+      content: `Data is at the heart of every great campaign. 
+We don’t just run ads — we continuously optimize them for better performance. 
+With transparent reporting, conversion tracking, and analytics, you’ll always know what’s working and where every dollar goes.
 
 Key Benefits:
-- Get discovered by more local clients searching online.  
-- Build lasting visibility with proven SEO practices.  
-- Secure more consultations directly from search traffic.  
-
-With expert GBP management, your law firm can dominate local search results and consistently convert local searchers into clients.`,
-      button: "Optimize Now",
+- Real-time insights and performance reports.  
+- Continuous optimization for maximum ROI.  
+- Smarter budgeting based on data, not guesswork.`,
+      button: "Track My Performance",
       bgImage:
-        "https://images.pexels.com/photos/7119258/pexels-photo-7119258.jpeg",
+        "https://images.pexels.com/photos/6476585/pexels-photo-6476585.jpeg",
     },
   };
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
