@@ -20,11 +20,11 @@ function WebThird() {
     calls: null,
   });
 
-const tabData: Record<TabKey, TabInfo> = {
-  lsa: {
-    title: "WEBSITE DESIGN",
-    heading: "MODERN, CREATIVE & CONVERTING WEBSITES",
-    content: `Your website is more than just an online presence — it's your brand’s first impression. 
+  const tabData: Record<TabKey, TabInfo> = {
+    lsa: {
+      title: "WEBSITE DESIGN",
+      heading: "MODERN, CREATIVE & CONVERTING WEBSITES",
+      content: `Your website is more than just an online presence — it's your brand’s first impression. 
 At OnlineAdwise, we design sleek, responsive, and high-performing websites that perfectly blend creativity and functionality. 
 From corporate sites to eCommerce platforms, our team ensures your website looks amazing and performs even better.
 
@@ -32,15 +32,15 @@ Key Benefits:
 - Visually stunning, mobile-friendly designs.  
 - Customized layouts tailored to your business goals.  
 - Built to engage visitors and boost conversions.`,
-    button: "Design My Website",
-    bgImage:
-      "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
-  },
+      button: "Design My Website",
+      bgImage:
+        "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
+    },
 
-  visibility: {
-    title: "LANDING PAGES",
-    heading: "DESIGNED TO DRIVE RESULTS",
-    content: `Convert visitors into loyal customers with high-impact landing pages built for performance. 
+    visibility: {
+      title: "LANDING PAGES",
+      heading: "DESIGNED TO DRIVE RESULTS",
+      content: `Convert visitors into loyal customers with high-impact landing pages built for performance. 
 We focus on conversion-driven design, persuasive copy, and data-backed structure to help your campaigns perform their best. 
 Whether you’re running ads or launching a product, we make your page stand out.
 
@@ -48,15 +48,15 @@ Key Benefits:
 - Boost conversions with strategic CTA placement.  
 - Optimized for Google Ads and social media campaigns.  
 - Proven designs that turn clicks into customers.`,
-    button: "Get My Landing Page",
-    bgImage:
-      "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg",
-  },
+      button: "Get My Landing Page",
+      bgImage:
+        "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg",
+    },
 
-  reviews: {
-    title: "SPEED & PERFORMANCE",
-    heading: "BUILT FOR SPEED AND STABILITY",
-    content: `No one likes waiting for a website to load. 
+    reviews: {
+      title: "SPEED & PERFORMANCE",
+      heading: "BUILT FOR SPEED AND STABILITY",
+      content: `No one likes waiting for a website to load. 
 We build lightning-fast, optimized websites that deliver a seamless browsing experience. 
 By combining clean code and modern frameworks, we make sure your site performs flawlessly on every device.
 
@@ -64,14 +64,14 @@ Key Benefits:
 - Blazing-fast page load times.  
 - Optimized code for peak performance.  
 - Smooth user experience that keeps visitors engaged.`,
-    button: "Test My Site Speed",
-    bgImage: "https://images.pexels.com/photos/18105/pexels-photo.jpg",
-  },
+      button: "Test My Site Speed",
+      bgImage: "https://images.pexels.com/photos/18105/pexels-photo.jpg",
+    },
 
-  calls: {
-    title: "SEO OPTIMIZATION",
-    heading: "OPTIMIZED TO RANK HIGHER",
-    content: `A beautiful website means nothing if no one sees it. 
+    calls: {
+      title: "SEO OPTIMIZATION",
+      heading: "OPTIMIZED TO RANK HIGHER",
+      content: `A beautiful website means nothing if no one sees it. 
 At OnlineAdwise, we integrate powerful SEO practices right into your website’s foundation. 
 From metadata and structure to keyword strategy, we ensure your website is ready to dominate search results.
 
@@ -79,12 +79,11 @@ Key Benefits:
 - Higher Google rankings with smart SEO setup.  
 - Increased visibility and targeted traffic.  
 - Long-term growth through organic reach.`,
-    button: "Optimize My Website",
-    bgImage:
-      "https://images.pexels.com/photos/4458423/pexels-photo-4458423.jpeg",
-  },
-};
-
+      button: "Optimize My Website",
+      bgImage:
+        "https://images.pexels.com/photos/4458423/pexels-photo-4458423.jpeg",
+    },
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -258,39 +257,437 @@ Key Benefits:
                     </svg>
                   )}
                   {key === "reviews" && (
-                    <div className="absolute bottom-0 left-52 right-0 z-10 w-full ">
+                    <div className="absolute bottom-0 left-1/2 right-0 z-10 w-full ">
                       <svg
-                        width="100%"
-                        height="80"
-                        viewBox="0 0 1200 100"
-                        preserveAspectRatio="none"
+                        width="450"
+                        height="350"
+                        viewBox="0 0 400 300"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <defs>
                           <linearGradient
-                            id="speedGradient"
+                            id="roiGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%"
+                          >
+                            <stop offset="0%" stop-color="#10b981" />
+                            <stop offset="100%" stop-color="#047857" />
+                          </linearGradient>
+                          <linearGradient
+                            id="chartGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="0%"
+                            y2="100%"
+                          >
+                            <stop offset="0%" stop-color="#f59e0b" />
+                            <stop offset="100%" stop-color="#d97706" />
+                          </linearGradient>
+                          <linearGradient
+                            id="dataFlow"
                             x1="0%"
                             y1="0%"
                             x2="100%"
                             y2="0%"
                           >
-                            <stop offset="0%" stop-color="#f59e0b" />
-                            <stop offset="100%" stop-color="#ef4444" />
+                            <stop offset="0%" stop-color="#3b82f6" />
+                            <stop offset="100%" stop-color="#1e40af" />
                           </linearGradient>
+                          <radialGradient
+                            id="nodeGlow"
+                            cx="50%"
+                            cy="50%"
+                            r="50%"
+                          >
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop
+                              offset="100%"
+                              stop-color="#fbbf24"
+                              stop-opacity="0.3"
+                            />
+                          </radialGradient>
                         </defs>
 
+                        <text
+                          x="200"
+                          y="30"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="18"
+                          font-weight="bold"
+                          fill="#fbbf24"
+                        >
+                          OPTIMIZED FOR ROI
+                        </text>
+
                         <path
-                          d="M50 50 L150 30 L250 70 L350 40 L450 60"
-                          stroke="url(#speedGradient)"
+                          d="M120 180 L160 120 L200 140 L240 100 L280 160"
+                          stroke="url(#roiGradient)"
                           stroke-width="3"
                           fill="none"
-                        />
+                          stroke-linecap="round"
+                        >
+                          <animate
+                            attributeName="stroke-dasharray"
+                            values="0 500; 500 0"
+                            dur="3s"
+                            fill="freeze"
+                          />
+                          <animate
+                            attributeName="stroke-dashoffset"
+                            values="500; 0"
+                            dur="3s"
+                            fill="freeze"
+                          />
+                        </path>
+
+                        <circle cx="120" cy="180" r="4" fill="#10b981">
+                          <animate
+                            attributeName="r"
+                            values="4;6;4"
+                            dur="2s"
+                            repeatCount="indefinite"
+                          />
+                        </circle>
+                        <circle cx="160" cy="120" r="4" fill="#10b981">
+                          <animate
+                            attributeName="r"
+                            values="4;6;4"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin="0.3s"
+                          />
+                        </circle>
+                        <circle cx="200" cy="140" r="4" fill="#10b981">
+                          <animate
+                            attributeName="r"
+                            values="4;6;4"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin="0.6s"
+                          />
+                        </circle>
+                        <circle cx="240" cy="100" r="4" fill="#10b981">
+                          <animate
+                            attributeName="r"
+                            values="4;6;4"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin="0.9s"
+                          />
+                        </circle>
+                        <circle cx="280" cy="160" r="4" fill="#10b981">
+                          <animate
+                            attributeName="r"
+                            values="4;6;4"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin="1.2s"
+                          />
+                        </circle>
+
+                        <rect
+                          x="130"
+                          y="160"
+                          width="40"
+                          height="20"
+                          fill="url(#chartGradient)"
+                          opacity="0"
+                        >
+                          <animate
+                            attributeName="height"
+                            values="0;20"
+                            dur="1s"
+                            fill="freeze"
+                            begin="0.5s"
+                          />
+                          <animate
+                            attributeName="y"
+                            values="180;160"
+                            dur="1s"
+                            fill="freeze"
+                            begin="0.5s"
+                          />
+                          <animate
+                            attributeName="opacity"
+                            values="0;1"
+                            dur="1s"
+                            fill="freeze"
+                            begin="0.5s"
+                          />
+                        </rect>
+
+                        <rect
+                          x="190"
+                          y="140"
+                          width="40"
+                          height="40"
+                          fill="url(#chartGradient)"
+                          opacity="0"
+                        >
+                          <animate
+                            attributeName="height"
+                            values="0;40"
+                            dur="1s"
+                            fill="freeze"
+                            begin="1s"
+                          />
+                          <animate
+                            attributeName="y"
+                            values="180;140"
+                            dur="1s"
+                            fill="freeze"
+                            begin="1s"
+                          />
+                          <animate
+                            attributeName="opacity"
+                            values="0;1"
+                            dur="1s"
+                            fill="freeze"
+                            begin="1s"
+                          />
+                        </rect>
+
+                        <rect
+                          x="250"
+                          y="120"
+                          width="40"
+                          height="60"
+                          fill="url(#chartGradient)"
+                          opacity="0"
+                        >
+                          <animate
+                            attributeName="height"
+                            values="0;60"
+                            dur="1s"
+                            fill="freeze"
+                            begin="1.5s"
+                          />
+                          <animate
+                            attributeName="y"
+                            values="180;120"
+                            dur="1s"
+                            fill="freeze"
+                            begin="1.5s"
+                          />
+                          <animate
+                            attributeName="opacity"
+                            values="0;1"
+                            dur="1s"
+                            fill="freeze"
+                            begin="1.5s"
+                          />
+                        </rect>
+
+                        <circle cx="150" cy="80" r="15" fill="url(#nodeGlow)">
+                          <animate
+                            attributeName="r"
+                            values="15;18;15"
+                            dur="2s"
+                            repeatCount="indefinite"
+                          />
+                        </circle>
+
+                        <circle cx="250" cy="80" r="15" fill="url(#nodeGlow)">
+                          <animate
+                            attributeName="r"
+                            values="15;18;15"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin="0.5s"
+                          />
+                        </circle>
+
                         <path
-                          d="M50 50 L200 20 L350 80 L500 30 L650 50"
-                          stroke="url(#speedGradient)"
-                          stroke-width="3"
-                          fill="none"
-                        />
+                          d="M150 80 L250 80"
+                          stroke="url(#dataFlow)"
+                          stroke-width="2"
+                          stroke-dasharray="5,5"
+                        >
+                          <animate
+                            attributeName="stroke-dashoffset"
+                            values="0;10"
+                            dur="1s"
+                            repeatCount="indefinite"
+                          />
+                        </path>
+
+                        <circle
+                          cx="200"
+                          cy="200"
+                          r="8"
+                          fill="#10b981"
+                          opacity="0"
+                        >
+                          <animate
+                            attributeName="opacity"
+                            values="0;1;0"
+                            dur="2s"
+                            repeatCount="indefinite"
+                          />
+                          <animate
+                            attributeName="r"
+                            values="8;10;8"
+                            dur="2s"
+                            repeatCount="indefinite"
+                          />
+                        </circle>
+
+                        <circle
+                          cx="180"
+                          cy="200"
+                          r="8"
+                          fill="#3b82f6"
+                          opacity="0"
+                        >
+                          <animate
+                            attributeName="opacity"
+                            values="0;1;0"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin="0.3s"
+                          />
+                          <animate
+                            attributeName="r"
+                            values="8;10;8"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin="0.3s"
+                          />
+                        </circle>
+
+                        <circle
+                          cx="220"
+                          cy="200"
+                          r="8"
+                          fill="#f59e0b"
+                          opacity="0"
+                        >
+                          <animate
+                            attributeName="opacity"
+                            values="0;1;0"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin="0.6s"
+                          />
+                          <animate
+                            attributeName="r"
+                            values="8;10;8"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin="0.6s"
+                          />
+                        </circle>
+
+                        <text
+                          x="200"
+                          y="240"
+                          text-anchor="middle"
+                          font-family="Arial, sans-serif"
+                          font-size="12"
+                          fill="#d1d5db"
+                          font-weight="bold"
+                        >
+                          <animate
+                            attributeName="fill"
+                            values="#d1d5db;#fbbf24;#d1d5db"
+                            dur="2s"
+                            repeatCount="indefinite"
+                          />
+                          +65% ROI
+                        </text>
+
+                        <circle
+                          cx="120"
+                          cy="100"
+                          r="3"
+                          fill="#fbbf24"
+                          opacity="0.6"
+                        >
+                          <animate
+                            attributeName="cy"
+                            values="100;90;100"
+                            dur="3s"
+                            repeatCount="indefinite"
+                          />
+                          <animate
+                            attributeName="opacity"
+                            values="0.6;0.2;0.6"
+                            dur="3s"
+                            repeatCount="indefinite"
+                          />
+                        </circle>
+
+                        <circle
+                          cx="280"
+                          cy="110"
+                          r="3"
+                          fill="#fbbf24"
+                          opacity="0.6"
+                        >
+                          <animate
+                            attributeName="cy"
+                            values="110;100;110"
+                            dur="3s"
+                            repeatCount="indefinite"
+                            begin="1s"
+                          />
+                          <animate
+                            attributeName="opacity"
+                            values="0.6;0.2;0.6"
+                            dur="3s"
+                            repeatCount="indefinite"
+                            begin="1s"
+                          />
+                        </circle>
+
+                        <circle
+                          cx="140"
+                          cy="130"
+                          r="3"
+                          fill="#fbbf24"
+                          opacity="0.6"
+                        >
+                          <animate
+                            attributeName="cy"
+                            values="130;120;130"
+                            dur="3s"
+                            repeatCount="indefinite"
+                            begin="1.5s"
+                          />
+                          <animate
+                            attributeName="opacity"
+                            values="0.6;0.2;0.6"
+                            dur="3s"
+                            repeatCount="indefinite"
+                            begin="1.5s"
+                          />
+                        </circle>
+
+                        <circle
+                          cx="260"
+                          cy="140"
+                          r="3"
+                          fill="#fbbf24"
+                          opacity="0.6"
+                        >
+                          <animate
+                            attributeName="cy"
+                            values="140;130;140"
+                            dur="3s"
+                            repeatCount="indefinite"
+                            begin="2s"
+                          />
+                          <animate
+                            attributeName="opacity"
+                            values="0.6;0.2;0.6"
+                            dur="3s"
+                            repeatCount="indefinite"
+                            begin="2s"
+                          />
+                        </circle>
                       </svg>
                     </div>
                   )}
